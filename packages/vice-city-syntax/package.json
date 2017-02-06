@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "C:\\Users\\leztown\\AppData\\Local\\Temp\\d-11713-6360-gure3s\\package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "C:\\Users\\leztown\\AppData\\Local\\Temp\\d-11713-6360-gure3s\\package.tgz",
+        "spec": "C:\\Users\\leztown\\AppData\\Local\\Temp\\d-11713-6360-gure3s\\package.tgz",
+        "type": "local"
+      },
+      "C:\\Users\\leztown\\AppData\\Local\\Temp\\apm-install-dir-11713-6360-6l79j6"
+    ]
+  ],
+  "_from": "..\\d-11713-6360-gure3s\\package.tgz",
+  "_id": "vice-city-syntax@0.2.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/vice-city-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "C:\\Users\\leztown\\AppData\\Local\\Temp\\d-11713-6360-gure3s\\package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "C:\\Users\\leztown\\AppData\\Local\\Temp\\d-11713-6360-gure3s\\package.tgz",
+    "spec": "C:\\Users\\leztown\\AppData\\Local\\Temp\\d-11713-6360-gure3s\\package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:..\\d-11713-6360-gure3s\\package.tgz",
+  "_shasum": "58ffa472d3caf1f8d12775a69204085a1b209507",
+  "_shrinkwrap": null,
+  "_spec": "C:\\Users\\leztown\\AppData\\Local\\Temp\\d-11713-6360-gure3s\\package.tgz",
+  "_where": "C:\\Users\\leztown\\AppData\\Local\\Temp\\apm-install-dir-11713-6360-6l79j6",
+  "bugs": {
+    "url": "https://github.com/blackxparade/Vice-City-Syntax/issues"
+  },
+  "dependencies": {},
+  "description": "A syntax theme based on GTA: Vice City's color palette.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/blackxparade/Vice-City-Syntax#readme",
+  "keywords": [
+    "syntax",
+    "theme",
+    "vice",
+    "city",
+    "neon"
+  ],
+  "license": "MIT",
+  "name": "vice-city-syntax",
+  "optionalDependencies": {},
+  "readme": "# vice-city-syntax theme\n\nA syntax theme based on GTA: Vice City's color palette.\n\n![Cover picture.](http://i.imgur.com/fBKa2Fa.png)\n\nFont: [Hack](http://sourcefoundry.org/hack/)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackxparade/Vice-City-Syntax.git"
+  },
+  "theme": "syntax",
+  "version": "0.2.0"
+}

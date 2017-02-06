@@ -1,0 +1,14 @@
+"*":
+  core:
+    telemetryConsent: "limited"
+    themes: [
+      "atom-dark-ui"
+      "Tycho-Dark-Syntax"
+    ]
+  editor: {}
+  "exception-reporting":
+    userId: "7786e388-505a-a7a4-d54d-6fab3753bb08"
+  fonts:
+    fontFamily: "Nova Mono"
+  welcome:
+    showOnStartup: false
