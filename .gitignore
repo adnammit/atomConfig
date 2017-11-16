@@ -1,6 +1,8 @@
 blob-store
 compile-cache
-dev
+github.cson
+packages
+recovery
 storage
 .apm
 .node-gyp
