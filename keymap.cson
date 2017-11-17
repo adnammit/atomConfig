@@ -38,6 +38,7 @@
 
 'body':
   'ctrl-,': 'application:show-settings'
+  'alt-shift-a':'application:add-project-folder'
   # 'ctrl-s-left': 'pane:split-left-and-copy-active-item'
   # 'ctrl-s-right': 'pane:split-right-and-copy-active-item'
   # 'ctrl-s-up': 'pane:split-up-and-copy-active-item'
