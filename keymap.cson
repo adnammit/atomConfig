@@ -30,7 +30,7 @@
   'alt-g': 'go-to-line:toggle'
   'ctrl-backspace': 'editor:delete-to-beginning-of-word'
   'ctrl-delete': 'editor:delete-to-end-of-word'
-  'ctrl-k': 'custom:kill-line'
+  'ctrl-j': 'custom:kill-line'
   #'ctrl-b': 'custom:write-pl-breakpoint'
 
 '.div.editor':

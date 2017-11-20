@@ -13,7 +13,7 @@
     atomicSoftTabs: false
     fontSize: 12
     invisibles: {}
-    preferredLineLength: 120
+    preferredLineLength: 130
     tabLength: 4
   "exception-reporting":
     userId: "7786e388-505a-a7a4-d54d-6fab3753bb08"
