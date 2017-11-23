@@ -23,6 +23,14 @@
 '.platform-win32, .platform-linux':
   'alt-t':'tree-view:toggle'
 
+# 
+# '.platform-win32 .find-and-replace, .platform-linux .find-and-replace':
+#   # 'ctrl-n':'find-and-replace:find-next-selected'
+#   # 'ctrl-shift-n':'find-and-replace:find-previous-selected'
+#   # 'shift-enter':'find-and-replace:select-skip'
+#   'enter':'find-and-replace:confirm'
+
+
 '.editor':
   # 'cmd-i': 'namespace:event'
   'ctrl-a': 'editor:move-to-first-character-of-line'

@@ -1,4 +1,7 @@
 "*":
+  "atom-notes": {}
+  "autocomplete-plus":
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
   core:
     disabledPackages: [
       "react"
@@ -13,11 +16,15 @@
     atomicSoftTabs: false
     fontSize: 12
     invisibles: {}
-    preferredLineLength: 130
+    softWrap: true
     tabLength: 4
   "exception-reporting":
     userId: "7786e388-505a-a7a4-d54d-6fab3753bb08"
   fonts:
     fontFamily: "Overpass Mono"
+  "markdown-pdf":
+    format: "Letter"
+  "markdown-preview":
+    allowUnsafeProtocols: true
   welcome:
     showOnStartup: false
