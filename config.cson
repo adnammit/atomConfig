@@ -16,6 +16,8 @@
     atomicSoftTabs: false
     fontSize: 12
     invisibles: {}
+    showIndentGuide: true
+    softTabs: false
     softWrap: true
     tabLength: 4
   "exception-reporting":
@@ -26,5 +28,7 @@
     format: "Letter"
   "markdown-preview":
     allowUnsafeProtocols: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
