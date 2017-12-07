@@ -1,4 +1,13 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "3bdcb795-cdc6-4dd3-8926-b45be43eda5c"
+    html:
+      indent_char: "    "
+      indent_inner_html: true
+    js:
+      indent_char: "    "
+      indent_with_tabs: false
   "atom-notes": {}
   "autocomplete-plus":
     confirmCompletion: "tab always, enter when suggestion explicitly selected"
@@ -16,7 +25,6 @@
     atomicSoftTabs: false
     fontSize: 12
     invisibles: {}
-    showIndentGuide: true
     softTabs: false
     softWrap: true
     tabLength: 4
@@ -24,6 +32,7 @@
     userId: "7786e388-505a-a7a4-d54d-6fab3753bb08"
   fonts:
     fontFamily: "Overpass Mono"
+  "git-diff": {}
   "markdown-pdf":
     format: "Letter"
   "markdown-preview":

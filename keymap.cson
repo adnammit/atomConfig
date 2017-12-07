@@ -23,13 +23,27 @@
 '.platform-win32, .platform-linux':
   'alt-t':'tree-view:toggle'
 
-# 
+#
 # '.platform-win32 .find-and-replace, .platform-linux .find-and-replace':
 #   # 'ctrl-n':'find-and-replace:find-next-selected'
 #   # 'ctrl-shift-n':'find-and-replace:find-previous-selected'
 #   # 'shift-enter':'find-and-replace:select-skip'
 #   'enter':'find-and-replace:confirm'
 
+# '*':
+# # fix all the ctrl-k collisions:
+#   'ctrl-k ctrl-0': 'unset!'
+#   'ctrl-k ctrl-1': 'unset!'
+#   'ctrl-k ctrl-2': 'unset!'
+#   'ctrl-k ctrl-3': 'unset!'
+#   'ctrl-k ctrl-4': 'unset!'
+#   'ctrl-k ctrl-5': 'unset!'
+#   'ctrl-k ctrl-6': 'unset!'
+#   'ctrl-k ctrl-7': 'unset!'
+#   'ctrl-k ctrl-8': 'unset!'
+#   'ctrl-k ctrl-9': 'unset!'
+#   'ctrl-y': 'readline-yank:yank'
+#   'ctrl-k': 'readline-yank:kill'
 
 '.editor':
   # 'cmd-i': 'namespace:event'
@@ -40,6 +54,18 @@
   'ctrl-delete': 'editor:delete-to-end-of-word'
   'ctrl-j': 'custom:kill-line'
   #'ctrl-b': 'custom:write-pl-breakpoint'
+# # fix all the ctrl-k collisions:
+#   'ctrl-k ctrl-0': 'unset!'
+#   'ctrl-k ctrl-1': 'unset!'
+#   'ctrl-k ctrl-2': 'unset!'
+#   'ctrl-k ctrl-3': 'unset!'
+#   'ctrl-k ctrl-4': 'unset!'
+#   'ctrl-k ctrl-5': 'unset!'
+#   'ctrl-k ctrl-6': 'unset!'
+#   'ctrl-k ctrl-7': 'unset!'
+#   'ctrl-k ctrl-8': 'unset!'
+#   'ctrl-k ctrl-9': 'unset!'
+
 
 '.div.editor':
     'ctrl-space': 'emacs:set-mark' #dont think there's actually an emacs to refer to here
@@ -54,6 +80,32 @@
   # 'ctrl-w': 'core:cut'
   # 'alt-w': 'core:copy'
   # 'ctrl-y': 'core:paste'
+
+  # undo weird ctrl-k stuff
+  'ctrl-k ctrl-u': 'unset!'
+  'ctrl-k down': 'unset!'
+  'ctrl-k left': 'unset!'
+  'ctrl-k right': 'unset!'
+  'ctrl-k up': 'unset!'
+  'ctrl-k ctrl-w': 'unset!'#'pane:close'
+
+  'ctrl-k ctrl-up': 'unset!'
+  'ctrl-k ctrl-right': 'unset!'
+  'ctrl-k ctrl-left': 'unset!'
+  'ctrl-k ctrl-down': 'unset!'
+  'ctrl-k ctrl-p': 'window:focus-previous-pane'
+  'ctrl-k ctrl-n': 'window:focus-next-pane'
+
+  'ctrl-u ctrl-u': 'editor:upper-case'
+  'ctrl-u up': 'pane:split-up-and-copy-active-item'
+  'ctrl-u right': 'pane:split-right-and-copy-active-item'
+  'ctrl-u left': 'pane:split-left-and-copy-active-item'
+  'ctrl-u down': 'pane:split-down-and-copy-active-item'
+
+  'ctrl-u ctrl-up': 'window:focus-pane-above'
+  'ctrl-u ctrl-right': 'window:focus-pane-on-right'
+  'ctrl-u ctrl-left': 'window:focus-pane-on-left'
+  'ctrl-u ctrl-down': 'window:focus-pane-below'
 
 '.workspace':
   # ==== CURSOR ====
@@ -99,5 +151,37 @@
   'ctrl-shift-up':'editor:select-to-beginning-of-previous-paragraph'
   'ctrl-down': 'editor:move-to-beginning-of-next-paragraph'
   'ctrl-shift-down':'editor:select-to-beginning-of-next-paragraph'
-# '.platform-darwin, .platform-win32, .platform-linux':
-  # 'alt-g': 'go-to-line:toggle'
+
+# fix all the ctrl-k collisions:
+  'ctrl-k ctrl-0': 'unset!'
+  'ctrl-k ctrl-1': 'unset!'
+  'ctrl-k ctrl-2': 'unset!'
+  'ctrl-k ctrl-3': 'unset!'
+  'ctrl-k ctrl-4': 'unset!'
+  'ctrl-k ctrl-5': 'unset!'
+  'ctrl-k ctrl-6': 'unset!'
+  'ctrl-k ctrl-7': 'unset!'
+  'ctrl-k ctrl-8': 'unset!'
+  'ctrl-k ctrl-9': 'unset!'
+  'ctrl-u ctrl-0':'editor:unfold-all'
+  'ctrl-u ctrl-1':'editor:fold-at-indent-level-1'
+  'ctrl-u ctrl-2':'editor:fold-at-indent-level-2'
+  'ctrl-u ctrl-3':'editor:fold-at-indent-level-3'
+  'ctrl-u ctrl-4':'editor:fold-at-indent-level-4'
+  'ctrl-u ctrl-5':'editor:fold-at-indent-level-5'
+  'ctrl-u ctrl-6':'editor:fold-at-indent-level-6'
+  'ctrl-u ctrl-7':'editor:fold-at-indent-level-7'
+  'ctrl-u ctrl-8':'editor:fold-at-indent-level-8'
+  'ctrl-u ctrl-9':'editor:fold-at-indent-level-9'
+
+#'.platform-darwin, .platform-win32, .platform-linux':
+
+'.platform-win32 .tree-view, .platform-linux .tree-view':
+  'ctrl-k up': 'unset!'
+  'ctrl-k right': 'unset!'
+  'ctrl-k left': 'unset!'
+  'ctrl-k down': 'unset!'
+  'ctrl-k l': 'unset!'
+  'ctrl-k k': 'unset!'
+  'ctrl-k j': 'unset!'
+  'ctrl-k h': 'unset!'
