@@ -22,10 +22,12 @@
       "one-dark-ui"
       "vice-city-syntax"
     ]
+    uriHandlerRegistration: "always"
   editor:
     atomicSoftTabs: false
     fontSize: 13
     invisibles: {}
+    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-…_"
     softWrap: true
     tabLength: 4
     tabType: "soft"

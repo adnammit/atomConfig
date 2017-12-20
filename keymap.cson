@@ -46,13 +46,20 @@
 #   'ctrl-k': 'readline-yank:kill'
 
 '.editor':
-  # 'cmd-i': 'namespace:event'
   'ctrl-a': 'editor:move-to-first-character-of-line'
   'ctrl-e': 'editor:move-to-end-of-line'
   'alt-g': 'go-to-line:toggle'
-  'ctrl-backspace': 'editor:delete-to-beginning-of-word'
-  'ctrl-delete': 'editor:delete-to-end-of-word'
+
+  'ctrl-backspace': 'editor:delete-to-beginning-of-subword'
+  'ctrl-delete': 'editor:delete-to-end-of-subword'
+
+  'ctrl-right': 'editor:move-to-next-subword-boundary'
+  'ctrl-left': 'editor:move-to-previous-subword-boundary'
+  'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
+  'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
+
   'ctrl-j': 'custom:kill-line'
+
   #'ctrl-b': 'custom:write-pl-breakpoint'
 # # fix all the ctrl-k collisions:
 #   'ctrl-k ctrl-0': 'unset!'
@@ -111,10 +118,6 @@
   # ==== CURSOR ====
   'alt->': 'core:move-to-bottom'
   'alt-<': 'core:move-to-top'
-  'ctrl-left': 'editor:move-to-beginning-of-word'
-  'ctrl-right': 'editor:move-to-end-of-word'
-  'ctrl-shift-left': 'editor:select-to-beginning-of-word'
-  'ctrl-shift-right': 'editor:select-to-end-of-word'
   'ctrl-shift-e': 'editor:select-to-end-of-line'
   'ctrl-shift-a': 'editor:select-to-beginning-of-line'
   'ctrl-x h': 'core:select-all'
