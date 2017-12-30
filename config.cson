@@ -13,7 +13,6 @@
     confirmCompletion: "tab always, enter when suggestion explicitly selected"
   core:
     disabledPackages: [
-      "react"
       "notebook"
     ]
     packagesWithKeymapsDisabled: [
