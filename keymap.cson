@@ -1,49 +1,25 @@
-# You can create a new keybinding in this file by typing "key" and then hitting
-# tab.
-#
-# You can find more information about keymaps in these guides:
-# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings
-# * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
-#
-# If you're having trouble with your keybindings not working, try the
-# Keybinding Resolver: `Cmd+.` on macOS and `Ctrl+.` on other platforms. See the
-# Debugging Guide for more information:
-# * http://flight-manual.atom.io/hacking-atom/sections/debugging/#check-the-keybindings
-#
-# This file uses CoffeeScript Object Notation (CSON).
-# If you are unfamiliar with CSON, you can read more about it in the
-# Atom Flight Manual:
-# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
 ###############################################################################
 # ====== TO DO ======
 # o make mark-set
-# o why do i have to ctrl-k twice to kill?
 
 '.platform-win32, .platform-linux':
+  'ctrl-k ctrl-b': 'unset!'
   'alt-t':'tree-view:toggle'
 
-#
-# '.platform-win32 .find-and-replace, .platform-linux .find-and-replace':
-#   # 'ctrl-n':'find-and-replace:find-next-selected'
-#   # 'ctrl-shift-n':'find-and-replace:find-previous-selected'
-#   # 'shift-enter':'find-and-replace:select-skip'
-#   'enter':'find-and-replace:confirm'
+'.platform-win32 .tree-view, .platform-linux .tree-view':
+# ====== UNDO ALL THE CTRL-K STUFF ======
+  'ctrl-k up': 'unset!'
+  'ctrl-k right': 'unset!'
+  'ctrl-k left': 'unset!'
+  'ctrl-k down': 'unset!'
+  'ctrl-k l': 'unset!'
+  'ctrl-k k': 'unset!'
+  'ctrl-k j': 'unset!'
+  'ctrl-k h': 'unset!'
 
-# '*':
-# # fix all the ctrl-k collisions:
-#   'ctrl-k ctrl-0': 'unset!'
-#   'ctrl-k ctrl-1': 'unset!'
-#   'ctrl-k ctrl-2': 'unset!'
-#   'ctrl-k ctrl-3': 'unset!'
-#   'ctrl-k ctrl-4': 'unset!'
-#   'ctrl-k ctrl-5': 'unset!'
-#   'ctrl-k ctrl-6': 'unset!'
-#   'ctrl-k ctrl-7': 'unset!'
-#   'ctrl-k ctrl-8': 'unset!'
-#   'ctrl-k ctrl-9': 'unset!'
-#   'ctrl-y': 'readline-yank:yank'
-#   'ctrl-k': 'readline-yank:kill'
+'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+  'ctrl-k ctrl-d': 'unset!' #'find-and-replace:select-skip'
 
 '.editor':
   'ctrl-a': 'editor:move-to-first-character-of-line'
@@ -58,52 +34,31 @@
   'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
   'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
 
-  'ctrl-j': 'custom:kill-line'
+  'ctrl-k': 'custom:kill-line'
 
-  #'ctrl-b': 'custom:write-pl-breakpoint'
-# # fix all the ctrl-k collisions:
-#   'ctrl-k ctrl-0': 'unset!'
-#   'ctrl-k ctrl-1': 'unset!'
-#   'ctrl-k ctrl-2': 'unset!'
-#   'ctrl-k ctrl-3': 'unset!'
-#   'ctrl-k ctrl-4': 'unset!'
-#   'ctrl-k ctrl-5': 'unset!'
-#   'ctrl-k ctrl-6': 'unset!'
-#   'ctrl-k ctrl-7': 'unset!'
-#   'ctrl-k ctrl-8': 'unset!'
-#   'ctrl-k ctrl-9': 'unset!'
-
-
-'.div.editor':
-    'ctrl-space': 'emacs:set-mark' #dont think there's actually an emacs to refer to here
+# #dont think there's actually an emacs to refer to here
+# '.div.editor':
+#     'ctrl-space': 'emacs:set-mark'
 
 'body':
-  'ctrl-,': 'application:show-settings'
-  'alt-shift-a':'application:add-project-folder'
-  # 'ctrl-s-left': 'pane:split-left-and-copy-active-item'
-  # 'ctrl-s-right': 'pane:split-right-and-copy-active-item'
-  # 'ctrl-s-up': 'pane:split-up-and-copy-active-item'
-  # 'ctrl-s-down': 'pane:split-down-and-copy-active-item'
-  # 'ctrl-w': 'core:cut'
-  # 'alt-w': 'core:copy'
-  # 'ctrl-y': 'core:paste'
-
-  # undo weird ctrl-k stuff
+# ====== UNDO ALL THE CTRL-K STUFF ======
   'ctrl-k ctrl-u': 'unset!'
   'ctrl-k down': 'unset!'
   'ctrl-k left': 'unset!'
   'ctrl-k right': 'unset!'
   'ctrl-k up': 'unset!'
   'ctrl-k ctrl-w': 'unset!'#'pane:close'
-
+  'ctrl-k ctrl-alt-w': 'unset!'
   'ctrl-k ctrl-up': 'unset!'
   'ctrl-k ctrl-right': 'unset!'
   'ctrl-k ctrl-left': 'unset!'
   'ctrl-k ctrl-down': 'unset!'
-  'ctrl-k ctrl-p': 'window:focus-previous-pane'
-  'ctrl-k ctrl-n': 'window:focus-next-pane'
+  'ctrl-k ctrl-p': 'unset!' #'window:focus-previous-pane'
+  'ctrl-k ctrl-n': 'unset!' #'window:focus-next-pane'
 
-  'ctrl-u ctrl-u': 'editor:upper-case'
+  'alt-shift-a':'application:add-project-folder'
+
+  #'ctrl-u ctrl-u': 'editor:upper-case'
   'ctrl-u up': 'pane:split-up-and-copy-active-item'
   'ctrl-u right': 'pane:split-right-and-copy-active-item'
   'ctrl-u left': 'pane:split-left-and-copy-active-item'
@@ -121,15 +76,6 @@
   'ctrl-shift-e': 'editor:select-to-end-of-line'
   'ctrl-shift-a': 'editor:select-to-beginning-of-line'
   'ctrl-x h': 'core:select-all'
-  'ctrl-i': 'editor:auto-indent'
-  #'ctrl-alt-i': 'plscript:toggle'
-
-  # 'ctrl-p': 'core:move-up'
-  # 'ctrl-n': 'core:move-down'
-  # 'ctrl-b': 'core:move-left'
-  # 'ctrl-f': 'core:move-right'
-  # 'alt-v': 'core:page-up'
-  # 'ctrl-v': 'core:page-down'
 
   # ==== TEXT MANIPULATION ====
   'ctrl-_': 'core:undo'
@@ -145,17 +91,19 @@
 'atom-text-editor':
   'alt-right': 'editor:move-to-end-of-screen-line'
   'alt-left': 'editor:move-to-first-character-of-line'
-  #'ctrl-k': 'editor:delete-line'
+  'ctrl-i': 'editor:auto-indent'
+
+'atom-text-editor:not([mini])':
+  'alt-b': 'git-blame:toggle'
+
+'atom-workspace atom-text-editor':
+  'ctrl-k ctrl-l': 'unset!' #'editor:lower-case'
+  'ctrl-k ctrl-u': 'unset!'
+  'ctrl-u ctrl-l': 'editor:lower-case'
+  'ctrl-u ctrl-u': 'editor:upper-case'
 
 'atom-workspace atom-text-editor:not([mini])':
-  'ctrl-\'': 'editor:fold-selection'
-  'ctrl-\"': 'editor:unfold-current-row'
-  'ctrl-up': 'editor:move-to-beginning-of-previous-paragraph'
-  'ctrl-shift-up':'editor:select-to-beginning-of-previous-paragraph'
-  'ctrl-down': 'editor:move-to-beginning-of-next-paragraph'
-  'ctrl-shift-down':'editor:select-to-beginning-of-next-paragraph'
-
-# fix all the ctrl-k collisions:
+# ====== UNDO ALL THE CTRL-K STUFF ======
   'ctrl-k ctrl-0': 'unset!'
   'ctrl-k ctrl-1': 'unset!'
   'ctrl-k ctrl-2': 'unset!'
@@ -177,14 +125,9 @@
   'ctrl-u ctrl-8':'editor:fold-at-indent-level-8'
   'ctrl-u ctrl-9':'editor:fold-at-indent-level-9'
 
-#'.platform-darwin, .platform-win32, .platform-linux':
-
-'.platform-win32 .tree-view, .platform-linux .tree-view':
-  'ctrl-k up': 'unset!'
-  'ctrl-k right': 'unset!'
-  'ctrl-k left': 'unset!'
-  'ctrl-k down': 'unset!'
-  'ctrl-k l': 'unset!'
-  'ctrl-k k': 'unset!'
-  'ctrl-k j': 'unset!'
-  'ctrl-k h': 'unset!'
+  'ctrl-\'': 'editor:fold-selection'
+  'ctrl-\"': 'editor:unfold-current-row'
+  'ctrl-up': 'editor:move-to-beginning-of-previous-paragraph'
+  'ctrl-shift-up':'editor:select-to-beginning-of-previous-paragraph'
+  'ctrl-down': 'editor:move-to-beginning-of-next-paragraph'
+  'ctrl-shift-down':'editor:select-to-beginning-of-next-paragraph'

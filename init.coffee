@@ -10,9 +10,10 @@
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}
 
+fs = require 'fs'
+path = require 'path'
+
 # emacs "kill" (ctrl-k)
 atom.commands.add 'atom-text-editor', 'custom:kill-line', ->
   editor = atom.workspace.getActiveTextEditor()
-  #editor.selectLinesContainingCursors()
   editor.cutToEndOfLine()
-  console.log "KILLED"
