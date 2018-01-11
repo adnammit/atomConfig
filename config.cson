@@ -11,13 +11,24 @@
   "atom-notes": {}
   "autocomplete-plus":
     confirmCompletion: "tab always, enter when suggestion explicitly selected"
+    includeCompletionsFromAllBuffers: false
+    strictMatching: true
   core:
+    closeEmptyWindows: false
     disabledPackages: [
-      "react"
       "notebook"
+      "atom-beautify"
+      "fonts"
+      "markdown-pdf"
+      "pigments"
+      "language-atom-notes"
+      "plscript"
+      "plscript"
+      "move-by-paragraph"
     ]
     packagesWithKeymapsDisabled: [
       "git-blame"
+      "move-by-paragraph"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -27,9 +38,9 @@
     uriHandlerRegistration: "always"
   editor:
     atomicSoftTabs: false
+    fontFamily: "liberation mono"
     fontSize: 13
     invisibles: {}
-    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-…_"
     softWrap: true
     tabLength: 4
     tabType: "soft"
@@ -38,14 +49,16 @@
   fonts:
     fontFamily: "Roboto Mono Medium"
   "git-blame":
+    colorCommitAuthors: true
+    columnWidth: 180
     ignoreWhiteSpaceDiffs: true
+    showOnlyLastNames: true
   "git-diff":
     showIconsInEditorGutter: true
   "markdown-pdf":
     format: "Letter"
   "markdown-preview":
     allowUnsafeProtocols: true
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   welcome:
     showOnStartup: false

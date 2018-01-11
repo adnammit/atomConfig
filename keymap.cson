@@ -68,6 +68,7 @@
   'ctrl-u ctrl-right': 'window:focus-pane-on-right'
   'ctrl-u ctrl-left': 'window:focus-pane-on-left'
   'ctrl-u ctrl-down': 'window:focus-pane-below'
+  'alt-o': 'window:focus-next-pane'
 
 '.workspace':
   # ==== CURSOR ====
@@ -95,6 +96,11 @@
 
 'atom-text-editor:not([mini])':
   'alt-b': 'git-blame:toggle'
+
+'atom-workspace':
+ 'alt-shift-p': 'plscript:toggle'
+ 'ctrl-b': 'plscript:add-breakpoint'
+ 'ctrl-alt-c': 'plscript:clear-breakpoints'
 
 'atom-workspace atom-text-editor':
   'ctrl-k ctrl-l': 'unset!' #'editor:lower-case'
