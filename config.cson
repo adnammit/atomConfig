@@ -18,7 +18,6 @@
     disabledPackages: [
       "notebook"
       "atom-beautify"
-      "fonts"
       "markdown-pdf"
       "pigments"
       "language-atom-notes"
@@ -47,7 +46,7 @@
   "exception-reporting":
     userId: "7786e388-505a-a7a4-d54d-6fab3753bb08"
   fonts:
-    fontFamily: "Roboto Mono Medium"
+    fontFamily: "Office Code Pro"
   "git-blame":
     colorCommitAuthors: true
     columnWidth: 180

@@ -137,3 +137,7 @@
   'ctrl-shift-up':'editor:select-to-beginning-of-previous-paragraph'
   'ctrl-down': 'editor:move-to-beginning-of-next-paragraph'
   'ctrl-shift-down':'editor:select-to-beginning-of-next-paragraph'
+
+'atom-workspace .editor .find-and-replace':
+  # 'ctrl-a': 'unset!'
+  'ctrl-a': 'core:select-all'

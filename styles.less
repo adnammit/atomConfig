@@ -21,6 +21,8 @@
 }
 
 
+
+
 // style the background color of the tree view
 .tree-view {
   background-color: #333;
@@ -31,16 +33,49 @@
 }
 
 // style the background and foreground colors on the atom-text-editor-element itself
-atom-text-editor {
-  // color: white;
-  background-color: #333;
-  //font: "monofur";
+atom-text-editor.editor {
+      // color: white;
+      background-color: #333;
+      //font: "monofur";
+      .cursor {
+            //border-color: red;
+      }
+      .syntax--comment {
+          font-family: "PT Mono";
+          //font-size: 1.2em;
+          //font-style: italic;
+          //color: red;
+      }
 }
 
-// style UI elements inside atom-text-editor
-atom-text-editor .cursor {
-  //border-color: red;
-}
+//
+// // style the background and foreground colors on the atom-text-editor-element itself
+// atom-workspace,
+// atom-text-editor {
+//     font-family: "Operator Mono";
+//   // color: white;
+//       background-color: #333;
+//       //font: "monofur";
+//       .cursor {
+//             //border-color: red;
+//       }
+//
+//       .syntax--comment {
+//           font-family: "PT Mono";
+//           //font-size: 1.2em;
+//           //font-style: italic;
+//           //color: red;
+//       }
+// }
+//
+// atom-text-editor::shadow{
+//   // .entity.other.attribute-name {
+//   //   font-style: italic;
+//   // }
+//   .comment {
+//     font-style: italic;
+//   }
+// }
 
 // .project-root.selected {
 //     background-color: #333;
