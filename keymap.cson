@@ -2,6 +2,11 @@
 ###############################################################################
 # ====== TO DO ======
 # o make mark-set
+# 
+# 'atom-workspace':
+#   'alt-cmd-.': 'tag:close-tag'
+# 'atom-text-editor[data-grammar~="html"]':
+#   '>': 'autoclose-html:close-and-complete'
 
 '.platform-win32, .platform-linux':
   'ctrl-k ctrl-b': 'unset!'

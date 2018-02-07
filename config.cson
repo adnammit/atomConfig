@@ -9,6 +9,21 @@
       indent_char: "    "
       indent_with_tabs: false
   "atom-notes": {}
+  "autoclose-html":
+    forceInline: [
+      "title"
+      "h1"
+      "h2"
+      "h3"
+      "h4"
+      "h5"
+      "h6"
+      "Synthetic"
+      "Str"
+      "int"
+      "Val_list"
+    ]
+    legacyMode: true
   "autocomplete-plus":
     confirmCompletion: "tab always, enter when suggestion explicitly selected"
     includeCompletionsFromAllBuffers: false
@@ -24,10 +39,15 @@
       "plscript"
       "plscript"
       "move-by-paragraph"
+      "autoclose-html"
+      "tag"
+      "fonts"
     ]
     packagesWithKeymapsDisabled: [
       "git-blame"
       "move-by-paragraph"
+      "autoclose-html"
+      "tag"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -49,8 +69,10 @@
     fontFamily: "Office Code Pro"
   "git-blame":
     colorCommitAuthors: true
-    columnWidth: 180
+    columnWidth: 242
+    dateFormatString: "MM-DD-YY"
     ignoreWhiteSpaceDiffs: true
+    showHash: false
     showOnlyLastNames: true
   "git-diff":
     showIconsInEditorGutter: true
