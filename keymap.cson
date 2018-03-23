@@ -2,7 +2,7 @@
 ###############################################################################
 # ====== TO DO ======
 # o make mark-set
-# 
+#
 # 'atom-workspace':
 #   'alt-cmd-.': 'tag:close-tag'
 # 'atom-text-editor[data-grammar~="html"]':
@@ -11,6 +11,7 @@
 '.platform-win32, .platform-linux':
   'ctrl-k ctrl-b': 'unset!'
   'alt-t':'tree-view:toggle'
+  'ctrl-shift-t':'tree-view:reveal-active-file'
 
 '.platform-win32 .tree-view, .platform-linux .tree-view':
 # ====== UNDO ALL THE CTRL-K STUFF ======
@@ -60,6 +61,8 @@
   'ctrl-k ctrl-down': 'unset!'
   'ctrl-k ctrl-p': 'unset!' #'window:focus-previous-pane'
   'ctrl-k ctrl-n': 'unset!' #'window:focus-next-pane'
+
+  'ctrl-shift-T': 'unset!' #'pane:reopen-closed-item'
 
   'alt-shift-a':'application:add-project-folder'
 

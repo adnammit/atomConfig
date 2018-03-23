@@ -32,15 +32,9 @@
     closeEmptyWindows: false
     disabledPackages: [
       "notebook"
-      "atom-beautify"
-      "markdown-pdf"
       "pigments"
-      "language-atom-notes"
       "plscript"
       "plscript"
-      "move-by-paragraph"
-      "autoclose-html"
-      "tag"
       "fonts"
     ]
     packagesWithKeymapsDisabled: [
@@ -58,7 +52,6 @@
   editor:
     atomicSoftTabs: false
     fontFamily: "liberation mono"
-    fontSize: 13
     invisibles: {}
     softWrap: true
     tabLength: 4
@@ -70,6 +63,7 @@
   "git-blame":
     colorCommitAuthors: true
     columnWidth: 242
+    customCommitUrlTemplateString: "ssh://dev-src.portland.perflogic.com:20022/src/git/main.git"
     dateFormatString: "MM-DD-YY"
     ignoreWhiteSpaceDiffs: true
     showHash: false
