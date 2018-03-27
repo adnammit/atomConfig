@@ -35,14 +35,16 @@
   'ctrl-backspace': 'editor:delete-to-beginning-of-subword'
   'ctrl-delete': 'editor:delete-to-end-of-subword'
 
-  'ctrl-right': 'editor:move-to-next-subword-boundary'
-  'ctrl-left': 'editor:move-to-previous-subword-boundary'
+  'ctrl-left':'editor:move-to-previous-word-boundary'
+  'ctrl-right':'editor:move-to-next-word-boundary'
+  # 'ctrl-right': 'editor:move-to-next-subword-boundary'
+  # 'ctrl-left': 'editor:move-to-previous-subword-boundary'
   'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
   'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
 
   'ctrl-k': 'custom:kill-line'
 
-# #dont think there's actually an emacs to refer to here
+# # TO DO
 # '.div.editor':
 #     'ctrl-space': 'emacs:set-mark'
 
@@ -64,6 +66,8 @@
 
   'ctrl-shift-T': 'unset!' #'pane:reopen-closed-item'
 
+  # 'ctrl-k': 'core:cut' # duplicate ctrl-x
+
   'alt-shift-a':'application:add-project-folder'
 
   #'ctrl-u ctrl-u': 'editor:upper-case'
@@ -84,7 +88,8 @@
   'alt-<': 'core:move-to-top'
   'ctrl-shift-e': 'editor:select-to-end-of-line'
   'ctrl-shift-a': 'editor:select-to-beginning-of-line'
-  'ctrl-x h': 'core:select-all'
+  # 'ctrl-x h': 'core:select-all'
+  'ctrl-h': 'core:select-all'
 
   # ==== TEXT MANIPULATION ====
   'ctrl-_': 'core:undo'
@@ -94,7 +99,7 @@
 
   # ==== BUFFER ====
   'ctrl-g': 'core:cancel'
-  'ctrl-x ctrl-c': 'window:close'
+  # 'ctrl-x ctrl-c': 'window:close'
   'ctrl-`': 'core:close'
 
 'atom-text-editor':
