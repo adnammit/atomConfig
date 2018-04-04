@@ -36,7 +36,10 @@
       "plscript"
       "plscript"
       "fonts"
+      "script"
+      "terminal-status"
     ]
+    excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
       "git-blame"
       "move-by-paragraph"
@@ -74,6 +77,7 @@
     format: "Letter"
   "markdown-preview":
     allowUnsafeProtocols: true
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false

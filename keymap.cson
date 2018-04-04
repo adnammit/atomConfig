@@ -35,10 +35,8 @@
   'ctrl-backspace': 'editor:delete-to-beginning-of-subword'
   'ctrl-delete': 'editor:delete-to-end-of-subword'
 
-  'ctrl-left':'editor:move-to-previous-word-boundary'
-  'ctrl-right':'editor:move-to-next-word-boundary'
-  # 'ctrl-right': 'editor:move-to-next-subword-boundary'
-  # 'ctrl-left': 'editor:move-to-previous-subword-boundary'
+  'ctrl-right': 'editor:move-to-next-subword-boundary'
+  'ctrl-left': 'editor:move-to-previous-subword-boundary'
   'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
   'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
 
