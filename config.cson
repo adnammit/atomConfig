@@ -2,6 +2,7 @@
   "atom-beautify":
     general:
       _analyticsUserId: "3bdcb795-cdc6-4dd3-8926-b45be43eda5c"
+      beautifyEntireFileOnSave: false
     html:
       indent_char: "    "
       indent_inner_html: true
@@ -28,6 +29,9 @@
     confirmCompletion: "tab always, enter when suggestion explicitly selected"
     includeCompletionsFromAllBuffers: false
     strictMatching: true
+  "bracket-matcher":
+    alwaysSkipClosingPairs: true
+    highlightMatchingLineNumber: true
   core:
     closeEmptyWindows: false
     disabledPackages: [
@@ -37,6 +41,14 @@
       "plscript"
       "script"
       "terminal-status"
+      "atom-wrap-in-tag"
+      "wrap-selection"
+      "atom-plscript"
+      "busy-signal"
+      "intentions"
+      "linter"
+      "linter-ui-default"
+      "linter-xmllint"
     ]
     excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
@@ -64,7 +76,6 @@
   fonts:
     fontFamily: "Office Code Pro"
   "git-blame":
-    colorCommitAuthors: true
     columnWidth: 242
     customCommitUrlTemplateString: "ssh://dev-src.portland.perflogic.com:20022/src/git/main.git"
     dateFormatString: "MM-DD-YY"
@@ -73,6 +84,7 @@
     showOnlyLastNames: true
   "git-diff":
     showIconsInEditorGutter: true
+  "linter-xmllint": {}
   "markdown-pdf":
     format: "Letter"
   "markdown-preview":
@@ -81,3 +93,4 @@
     hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+  "wrap-with-anything": {}
