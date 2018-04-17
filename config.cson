@@ -35,7 +35,6 @@
       "pigments"
       "plscript"
       "plscript"
-      "fonts"
       "script"
       "terminal-status"
     ]
@@ -55,6 +54,7 @@
   editor:
     atomicSoftTabs: false
     fontFamily: "liberation mono"
+    fontSize: 15
     invisibles: {}
     softWrap: true
     tabLength: 4

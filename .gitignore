@@ -1,3 +1,4 @@
+config.cson
 blob-store
 compile-cache
 github.cson
@@ -7,4 +8,4 @@ storage
 .apm
 .node-gyp
 .npm
-atom-notes
+atom-notes`

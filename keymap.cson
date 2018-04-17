@@ -8,10 +8,17 @@
 # 'atom-text-editor[data-grammar~="html"]':
 #   '>': 'autoclose-html:close-and-complete'
 
+
 '.platform-win32, .platform-linux':
   'ctrl-k ctrl-b': 'unset!'
   'alt-t':'tree-view:toggle'
   'ctrl-shift-t':'tree-view:reveal-active-file'
+
+'.platform-darwin':
+  'cmd-k cmd-b': 'unset!'
+  'cmd-t':'tree-view:toggle'
+  'ctrl-shift-t':'tree-view:reveal-active-file'
+  'ctrl-t': 'fuzzy-finder:toggle-file-finder'
 
 '.platform-win32 .tree-view, .platform-linux .tree-view':
 # ====== UNDO ALL THE CTRL-K STUFF ======
@@ -24,63 +31,109 @@
   'ctrl-k j': 'unset!'
   'ctrl-k h': 'unset!'
 
-'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
-  'ctrl-k ctrl-d': 'unset!' #'find-and-replace:select-skip'
+'.platform-darwin .tree-view':
+# ====== UNDO ALL THE cmd-K STUFF ======
+  'cmd-k up': 'unset!'
+  'cmd-k right': 'unset!'
+  'cmd-k left': 'unset!'
+  'cmd-k down': 'unset!'
+  'cmd-k l': 'unset!'
+  'cmd-k k': 'unset!'
+  'cmd-k j': 'unset!'
+  'cmd-k h': 'unset!'
 
-'.editor':
-  'ctrl-a': 'editor:move-to-first-character-of-line'
-  'ctrl-e': 'editor:move-to-end-of-line'
-  'alt-g': 'go-to-line:toggle'
+'.platform-win32 .editor, .platform-linux .editor':
+    'alt-g': 'go-to-line:toggle'
+    'ctrl-a': 'editor:move-to-first-character-of-line'
+    'ctrl-e': 'editor:move-to-end-of-line'
+    'ctrl-k': 'custom:kill-line'
 
-  'ctrl-backspace': 'editor:delete-to-beginning-of-subword'
-  'ctrl-delete': 'editor:delete-to-end-of-subword'
+    'ctrl-backspace': 'editor:delete-to-beginning-of-subword'
+    'ctrl-delete': 'editor:delete-to-end-of-subword'
 
-  'ctrl-right': 'editor:move-to-next-subword-boundary'
-  'ctrl-left': 'editor:move-to-previous-subword-boundary'
-  'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
-  'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
+    'ctrl-right': 'editor:move-to-next-subword-boundary'
+    'ctrl-left': 'editor:move-to-previous-subword-boundary'
+    'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
+    'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
 
-  'ctrl-k': 'custom:kill-line'
+
+'.platform-darwin .editor':
+    'cmd-g':'go-to-line:toggle'
+    'cmd-a': 'editor:move-to-first-character-of-line'
+    'cmd-e': 'editor:move-to-end-of-line'
+    'cmd-k': 'custom:kill-line'
+
+    'ctrl-backspace': 'editor:delete-to-beginning-of-subword'
+    'cmd-backspace': 'editor:delete-to-end-of-subword'
+
+    'cmd-right': 'editor:move-to-next-subword-boundary'
+    'cmd-left': 'editor:move-to-previous-subword-boundary'
+    'cmd-shift-right': 'editor:select-to-next-subword-boundary'
+    'cmd-shift-left': 'editor:select-to-previous-subword-boundary'
+
 
 # # TO DO
 # '.div.editor':
 #     'ctrl-space': 'emacs:set-mark'
 
+'.platform-win32 body, .platform-linux body':
+    # ====== UNDO ALL THE CTRL-K STUFF ======
+    'ctrl-k ctrl-u': 'unset!'
+    'ctrl-k down': 'unset!'
+    'ctrl-k left': 'unset!'
+    'ctrl-k right': 'unset!'
+    'ctrl-k up': 'unset!'
+    'ctrl-k ctrl-w': 'unset!'#'pane:close'
+    'ctrl-k ctrl-alt-w': 'unset!'
+    'ctrl-k ctrl-up': 'unset!'
+    'ctrl-k ctrl-right': 'unset!'
+    'ctrl-k ctrl-left': 'unset!'
+    'ctrl-k ctrl-down': 'unset!'
+    'ctrl-k ctrl-p': 'unset!' #'window:focus-previous-pane'
+    'ctrl-k ctrl-n': 'unset!' #'window:focus-next-pane'
+
+    'ctrl-u up': 'pane:split-up-and-copy-active-item'
+    'ctrl-u right': 'pane:split-right-and-copy-active-item'
+    'ctrl-u left': 'pane:split-left-and-copy-active-item'
+    'ctrl-u down': 'pane:split-down-and-copy-active-item'
+
+    'ctrl-u ctrl-up': 'window:focus-pane-above'
+    'ctrl-u ctrl-right': 'window:focus-pane-on-right'
+    'ctrl-u ctrl-left': 'window:focus-pane-on-left'
+    'ctrl-u ctrl-down': 'window:focus-pane-below'
+    'alt-o': 'window:focus-next-pane'
+
+    'alt-shift-a':'application:add-project-folder'
+
+
+'.platform-darwin body':
+# ====== UNDO ALL THE cmd-K STUFF ======
+  'cmd-k cmd-u': 'unset!'
+  'cmd-k down': 'unset!'
+  'cmd-k left': 'unset!'
+  'cmd-k right': 'unset!'
+  'cmd-k up': 'unset!'
+  'cmd-k cmd-w': 'unset!'#'pane:close'
+  'cmd-k cmd-alt-w': 'unset!'
+  'cmd-k cmd-up': 'unset!'
+  'cmd-k cmd-right': 'unset!'
+  'cmd-k cmd-left': 'unset!'
+  'cmd-k cmd-down': 'unset!'
+  'cmd-k cmd-p': 'unset!' #'window:focus-previous-pane'
+  'cmd-k cmd-n': 'unset!' #'window:focus-next-pane'
+
+  'cmd-shift-T': 'unset!' #'pane:reopen-closed-item'
+  'cmd-up':'unset!'
+  'cmd-down':'unset!'
+  'cmd-`': 'core:close'
+  'shift-cmd-T': 'unset!' #'pane:reopen-closed-item'
+
+  'ctrl-A':'application:add-project-folder'
+
 'body':
-# ====== UNDO ALL THE CTRL-K STUFF ======
-  'ctrl-k ctrl-u': 'unset!'
-  'ctrl-k down': 'unset!'
-  'ctrl-k left': 'unset!'
-  'ctrl-k right': 'unset!'
-  'ctrl-k up': 'unset!'
-  'ctrl-k ctrl-w': 'unset!'#'pane:close'
-  'ctrl-k ctrl-alt-w': 'unset!'
-  'ctrl-k ctrl-up': 'unset!'
-  'ctrl-k ctrl-right': 'unset!'
-  'ctrl-k ctrl-left': 'unset!'
-  'ctrl-k ctrl-down': 'unset!'
-  'ctrl-k ctrl-p': 'unset!' #'window:focus-previous-pane'
-  'ctrl-k ctrl-n': 'unset!' #'window:focus-next-pane'
+  'cmd-w': 'core:close'
 
-  'ctrl-shift-T': 'unset!' #'pane:reopen-closed-item'
-
-  # 'ctrl-k': 'core:cut' # duplicate ctrl-x
-
-  'alt-shift-a':'application:add-project-folder'
-
-  #'ctrl-u ctrl-u': 'editor:upper-case'
-  'ctrl-u up': 'pane:split-up-and-copy-active-item'
-  'ctrl-u right': 'pane:split-right-and-copy-active-item'
-  'ctrl-u left': 'pane:split-left-and-copy-active-item'
-  'ctrl-u down': 'pane:split-down-and-copy-active-item'
-
-  'ctrl-u ctrl-up': 'window:focus-pane-above'
-  'ctrl-u ctrl-right': 'window:focus-pane-on-right'
-  'ctrl-u ctrl-left': 'window:focus-pane-on-left'
-  'ctrl-u ctrl-down': 'window:focus-pane-below'
-  'alt-o': 'window:focus-next-pane'
-
-'.workspace':
+'.platform-win32 .workspace, .platform-linux .workspace':
   # ==== CURSOR ====
   'alt->': 'core:move-to-bottom'
   'alt-<': 'core:move-to-top'
@@ -97,30 +150,71 @@
 
   # ==== BUFFER ====
   'ctrl-g': 'core:cancel'
-  # 'ctrl-x ctrl-c': 'window:close'
   'ctrl-`': 'core:close'
 
-'atom-text-editor':
-  'alt-right': 'editor:move-to-end-of-screen-line'
-  'alt-left': 'editor:move-to-first-character-of-line'
-  'ctrl-i': 'editor:auto-indent'
+'.platform-darwin .workspace':
+  # ==== CURSOR ====
+  'cmd->': 'core:move-to-bottom'
+  'cmd-<': 'core:move-to-top'
+  'cmd-shift-e': 'editor:select-to-end-of-line'
+  'cmd-shift-a': 'editor:select-to-beginning-of-line'
+  'cmd-h': 'core:select-all'
+
+  # ==== TEXT MANIPULATION ====
+  # 'ctrl-_': 'core:undo'
+  'ctrl-w': 'core:cut'
+  'cmd-w': 'core:copy'
+  'cmd-y': 'core:paste'
+
+  # ==== BUFFER ====
+  'ctrl-g': 'core:cancel'
+  'ctrl-`': 'core:close'
+
+
+'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+    'ctrl-k ctrl-d': 'unset!' #'find-and-replace:select-skip'
+
+    'alt-right': 'editor:move-to-end-of-screen-line'
+    'alt-left': 'editor:move-to-first-character-of-line'
+    'ctrl-i': 'editor:auto-indent'
+
+'.platform-darwin atom-text-editor':
+    'cmd-k cmd-d': 'unset!' #'find-and-replace:select-skip'
+
+    'cmd-t':'unset!'
+    'ctrl-t':'unset!'
+    'cmd-g':'unset!'
+    'cmd-a':'unset!'
+    'cmd-right':'unset!'
+    'cmd-left':'unset!'
+    'cmd-k cmd-d': 'unset!' #'find-and-replace:select-skip'
+    'cmd-delete': 'unset!'#'editor:delete-to-end-of-line'
+    'ctrl-A':'unset!'
+
+    'cmd-i': 'editor:auto-indent'
 
 'atom-text-editor:not([mini])':
-  'alt-b': 'git-blame:toggle'
+    'alt-b': 'git-blame:toggle'
 
 'atom-workspace':
- 'alt-shift-p': 'plscript:toggle'
- 'ctrl-b': 'plscript:add-breakpoint'
- 'ctrl-alt-c': 'plscript:clear-breakpoints'
+    'alt-shift-p': 'plscript:toggle'
+    'ctrl-b': 'plscript:add-breakpoint'
+    'ctrl-alt-c': 'plscript:clear-breakpoints'
 
-'atom-workspace atom-text-editor':
-  'ctrl-k ctrl-l': 'unset!' #'editor:lower-case'
-  'ctrl-k ctrl-u': 'unset!'
-  'ctrl-u ctrl-l': 'editor:lower-case'
-  'ctrl-u ctrl-u': 'editor:upper-case'
+'.platform-win32 atom-workspace atom-text-editor, .platform-win32 atom-workspace atom-text-editor':
+    'ctrl-k ctrl-l': 'unset!' #'editor:lower-case'
+    'ctrl-k ctrl-u': 'unset!'
+    'ctrl-u ctrl-l': 'editor:lower-case'
+    'ctrl-u ctrl-u': 'editor:upper-case'
 
-'atom-workspace atom-text-editor:not([mini])':
-# ====== UNDO ALL THE CTRL-K STUFF ======
+'.platform-darwin atom-workspace atom-text-editor':
+    'cmd-k cmd-l': 'unset!'
+    'cmd-k cmd-u': 'unset!'
+    'cmd-u cmd-l': 'editor:lower-case'
+    'cmd-u cmd-u': 'editor:upper-case'
+
+'.platform-win32 atom-workspace atom-text-editor:not([mini]), .platform-linux atom-workspace atom-text-editor:not([mini])':
+    # ====== UNDO ALL THE CTRL-K STUFF ======
   'ctrl-k ctrl-0': 'unset!'
   'ctrl-k ctrl-1': 'unset!'
   'ctrl-k ctrl-2': 'unset!'
@@ -149,6 +243,41 @@
   'ctrl-down': 'editor:move-to-beginning-of-next-paragraph'
   'ctrl-shift-down':'editor:select-to-beginning-of-next-paragraph'
 
-'atom-workspace .editor .find-and-replace':
-  # 'ctrl-a': 'unset!'
+'.platform-darwin atom-workspace atom-text-editor:not([mini])':
+    # ====== UNDO ALL THE cmd-K STUFF ======
+  'cmd-k cmd-0': 'unset!'
+  'cmd-k cmd-1': 'unset!'
+  'cmd-k cmd-2': 'unset!'
+  'cmd-k cmd-3': 'unset!'
+  'cmd-k cmd-4': 'unset!'
+  'cmd-k cmd-5': 'unset!'
+  'cmd-k cmd-6': 'unset!'
+  'cmd-k cmd-7': 'unset!'
+  'cmd-k cmd-8': 'unset!'
+  'cmd-k cmd-9': 'unset!'
+  'cmd-u cmd-0':'editor:unfold-all'
+  'cmd-u cmd-1':'editor:fold-at-indent-level-1'
+  'cmd-u cmd-2':'editor:fold-at-indent-level-2'
+  'cmd-u cmd-3':'editor:fold-at-indent-level-3'
+  'cmd-u cmd-4':'editor:fold-at-indent-level-4'
+  'cmd-u cmd-5':'editor:fold-at-indent-level-5'
+  'cmd-u cmd-6':'editor:fold-at-indent-level-6'
+  'cmd-u cmd-7':'editor:fold-at-indent-level-7'
+  'cmd-u cmd-8':'editor:fold-at-indent-level-8'
+  'cmd-u cmd-9':'editor:fold-at-indent-level-9'
+
+  'cmd-<': 'unset!' #'editor:scroll-to-cursor'
+
+  'cmd-\'': 'editor:fold-selection'
+  'cmd-\"': 'editor:unfold-current-row'
+  'cmd-up': 'editor:move-to-beginning-of-previous-paragraph'
+  'cmd-shift-up':'editor:select-to-beginning-of-previous-paragraph'
+  'cmd-down': 'editor:move-to-beginning-of-next-paragraph'
+  'cmd-shift-down':'editor:select-to-beginning-of-next-paragraph'
+
+'.platform-win32 atom-workspace .editor .find-and-replace, .platform-linux atom-workspace .editor .find-and-replace':
   'ctrl-a': 'core:select-all'
+
+'.platform-darwin atom-workspace .editor .find-and-replace':
+  # 'ctrl-a': 'unset!'
+  'cmd-a': 'core:select-all'
