@@ -42,10 +42,17 @@
   'cmd-k j': 'unset!'
   'cmd-k h': 'unset!'
 
-'.platform-win32 .editor, .platform-linux .editor':
+'.platform-win32 .editor:not([mini]), .platform-linux .editor:not([mini])':
     'alt-g': 'go-to-line:toggle'
     'ctrl-a': 'editor:move-to-first-character-of-line'
     'ctrl-e': 'editor:move-to-end-of-line'
+
+'.platform-darwin .editor:not([mini])':
+    'cmd-g':'go-to-line:toggle'
+    'cmd-a': 'editor:move-to-first-character-of-line'
+    'cmd-e': 'editor:move-to-end-of-line'
+
+'.platform-win32 .editor, .platform-linux .editor':
     'ctrl-k': 'custom:kill-line'
 
     'ctrl-backspace': 'editor:delete-to-beginning-of-subword'
@@ -56,11 +63,7 @@
     'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
     'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
 
-
 '.platform-darwin .editor':
-    'cmd-g':'go-to-line:toggle'
-    'cmd-a': 'editor:move-to-first-character-of-line'
-    'cmd-e': 'editor:move-to-end-of-line'
     'cmd-k': 'custom:kill-line'
 
     'ctrl-backspace': 'editor:delete-to-beginning-of-subword'
@@ -76,7 +79,21 @@
 # '.div.editor':
 #     'ctrl-space': 'emacs:set-mark'
 
-'.platform-win32 body, .platform-linux body':
+# #### WINDOW COMMANDS Y U NO WORK W/ PLATFORM TABS???
+# 'body':
+#     'alt-o': 'window:focus-next-pane'
+#
+#     'ctrl-u up': 'pane:split-up-and-copy-active-item'
+#     'ctrl-u right': 'pane:split-right-and-copy-active-item'
+#     'ctrl-u left': 'pane:split-left-and-copy-active-item'
+#     'ctrl-u down': 'pane:split-down-and-copy-active-item'
+#
+#     'ctrl-u ctrl-up': 'window:focus-pane-above'
+#     'ctrl-u ctrl-right': 'window:focus-pane-on-right'
+#     'ctrl-u ctrl-left': 'window:focus-pane-on-left'
+#     'ctrl-u ctrl-down': 'window:focus-pane-below'
+
+'body.platform-win32, body.platform-linux':
     # ====== UNDO ALL THE CTRL-K STUFF ======
     'ctrl-k ctrl-u': 'unset!'
     'ctrl-k down': 'unset!'
@@ -106,7 +123,7 @@
     'alt-shift-a':'application:add-project-folder'
 
 
-'.platform-darwin body':
+'body.platform-darwin':
 # ====== UNDO ALL THE cmd-K STUFF ======
   'cmd-k cmd-u': 'unset!'
   'cmd-k down': 'unset!'
@@ -128,10 +145,10 @@
   'cmd-`': 'core:close'
   'shift-cmd-T': 'unset!' #'pane:reopen-closed-item'
 
-  'ctrl-A':'application:add-project-folder'
+  'ctrl-shift-a':'application:add-project-folder'
 
-'body':
-  'cmd-w': 'core:close'
+# 'body':
+#   'cmd-w': 'core:close'
 
 '.platform-win32 .workspace, .platform-linux .workspace':
   # ==== CURSOR ====
@@ -192,6 +209,12 @@
     'ctrl-A':'unset!'
 
     'cmd-i': 'editor:auto-indent'
+
+'.platform-win32 atom-text-editor.editor-mini, .platform-linux atom-text-editor.editor-mini':
+  'ctrl-a': 'core:select-all'
+
+'.platform-darwin atom-text-editor.editor-mini':
+  'cmd-a': 'core:select-all'
 
 'atom-text-editor:not([mini])':
     'alt-b': 'git-blame:toggle'
@@ -275,9 +298,11 @@
   'cmd-down': 'editor:move-to-beginning-of-next-paragraph'
   'cmd-shift-down':'editor:select-to-beginning-of-next-paragraph'
 
-'.platform-win32 atom-workspace .editor .find-and-replace, .platform-linux atom-workspace .editor .find-and-replace':
-  'ctrl-a': 'core:select-all'
 
-'.platform-darwin atom-workspace .editor .find-and-replace':
-  # 'ctrl-a': 'unset!'
-  'cmd-a': 'core:select-all'
+
+# 'atom-workspace.platform-win32 .editor .find-and-replace, .platform-linux atom-workspace .editor .find-and-replace':
+#   'ctrl-a': 'core:select-all'
+
+# '.platform-darwin atom-workspace .editor .find-and-replace':
+#   # 'ctrl-a': 'unset!'
+#   'cmd-a': 'core:select-all'
