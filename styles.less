@@ -1,38 +1,63 @@
-/*
- * Your Stylesheet
- *
- * This stylesheet is loaded when Atom starts up and is reloaded automatically
- * when it is changed and saved.
- *
- * Add your own CSS or Less to fully customize Atom.
- * If you are unfamiliar with Less, you can read more about it here:
- * http://lesscss.org
- */
+// =============== TREE VIEW  ==================
 
-
-/*
- * Examples
- * (To see them, uncomment and save)
- */
-
-// Markup Preview Styles
-.markdown-preview.markdown-preview {
-     background-color: #333;
+// ----- TREE VIEW HEADER -----
+atom-dock .tab-bar .tab.active {
+    background-color: #555;
+    color: #ccc;
 }
 
+// ----- TREE FOLDER HEADER -----
+.tree-view .project-root-header {
+    background-color: #444;
+    // color: red;
+}
 
+// ----- HIDDEN TOGGLE TAB -----
+.atom-dock-toggle-button .atom-dock-toggle-button-inner {
+    background-color: #333;
+    color: #ccc;
+}
 
-
-// style the background color of the tree view
 .tree-view {
-  background-color: #333;
+    background-color: #333;
 }
 
 .editor .gutter {
     background-color: #333;
 }
 
-// style the background and foreground colors on the atom-text-editor-element itself
+
+
+// =============== TEXT EDITOR TAB BAR ==================
+
+// ----- BACKGROUND BAR BEHIND TABS -----
+.tab-bar {
+    background-color: #111;
+}
+
+// ----- ACTIVE TAB -----
+.tab-bar .tab.active[data-type$="Editor"], .tab-bar .tab.active[data-type$="AboutView"], .tab-bar .tab.active[data-type$="TimecopView"], .tab-bar .tab.active[data-type$="StyleguideView"], .tab-bar .tab.active[data-type="MarkdownPreviewView"] {
+    background-color: #333;
+    // box-shadow: inset 1px 0 #555, inset 0 -1px 0 #555;
+    // box-shadow: 1px 0 0 #777;
+    // box-shadow: inset 0 -1px 0 #777, 1px 0 0 #777;
+}
+
+// ----- INACTIVE TABS -----
+.tab-bar .tab {
+    background-color: #222;
+    box-shadow: inset 0 -1px 0 #555;
+    // box-shadow: inset 1px 0 0 #555, inset 0 -1px 0 #555;
+}
+.tab-bar .tab:last-of-type {
+    box-shadow: inset 0 -1px 0 #555;
+    // box-shadow: inset 1px 0 0 #555, inset 0 -1px 0 #555;
+}
+
+
+
+// =============== ATOM TEXT EDITOR ==================
+
 atom-text-editor.editor {
       // color: white;
       background-color: #333;
@@ -50,95 +75,60 @@ atom-text-editor.editor {
       }
 }
 
-//
-// // style the background and foreground colors on the atom-text-editor-element itself
-// atom-workspace,
-// atom-text-editor {
-//     font-family: "Operator Mono";
-//   // color: white;
-//       background-color: #333;
-//       //font: "monofur";
-//       .cursor {
-//             //border-color: red;
-//       }
-//
-//       .syntax--comment {
-//           font-family: "PT Mono";
-//           //font-size: 1.2em;
-//           //font-style: italic;
-//           //color: red;
-//       }
-// }
-//
-// atom-text-editor::shadow{
-//   // .entity.other.attribute-name {
-//   //   font-style: italic;
-//   // }
-//   .comment {
-//     font-style: italic;
-//   }
-// }
+atom-text-editor .wrap-guide {
+    // background-color: #777;
+    background-color: #555;// #AB85AA;
+}
 
-// .project-root.selected {
-//     background-color: #333;
-//     color: #ccc;
-// }
-//
-// // ===== TAB =====
-// .inset-panel {
-//     background-color: #333;
-//     color: #ccc;
-// }
-
-// ===== TAB =====
+// ----- TAB -----
 .horizontal-scrollbar {
     background-color: #333;
     color: #ccc;
 }
 
-// ===== FOOTER =====
+// ----- FOOTER -----
 .status-bar {
     background-color: #333;
     color: #ccc;
 }
 
-// ===== FIND/REPLACE =====
+// ----- FIND/REPLACE -----
 .tool-panel {
     background-color: #333;
     color: #ccc;
 }
 
-// ===== BUTTONS =====
+// ----- BUTTONS -----
 .btn {
     background-color: #333; //proper selector, wrong prop
     color: #ccc;
 }
 
-// ===== BUTTONS =====
+// ----- BUTTONS -----
 .editor.mini {
     background-color: #262626; //proper selector, wrong prop
     color: #ccc;
 }
 
 
-// .atom-dock-resize-handle {
-//     background-color: #333;
-// }
-//
-// .tab-bar {
-//     background-color: #333;
-// }
-//
-//
-// .config-menu {
-//     background-color: #333;
-// }
 
-//
-// .status-bar-left {
-//     background-color: #333;
-// }
-//
-// .status-bar-right {
-//     background-color: #333;
-// }
+// =============== SCROLLBARS ==================
+
+// ----- V SCROLL BAR -----
+.scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+// ----- V SCROLL GUTTER -----
+.scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-track {
+    background: #333;
+}
+
+
+
+// =============== MARKDOWN PREVIEW  ==================
+
+// Markup Preview Styles
+.markdown-preview.markdown-preview {
+     background-color: #333;
+}

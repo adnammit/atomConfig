@@ -231,6 +231,7 @@
     'alt-right': 'editor:move-to-end-of-screen-line'
     'alt-left': 'editor:move-to-first-character-of-line'
     'ctrl-i': 'editor:auto-indent'
+    'ctrl-alt-m': 'bracket-matcher:select-inside-brackets'
 
 '.platform-darwin atom-text-editor':
     'cmd-k cmd-d': 'unset!' #'find-and-replace:select-skip'
@@ -246,6 +247,7 @@
     'ctrl-A':'unset!'
 
     'cmd-i': 'editor:auto-indent'
+    'cmd-alt-m': 'bracket-matcher:select-inside-brackets'
 
 '.platform-win32 atom-text-editor.editor-mini, .platform-linux atom-text-editor.editor-mini':
   'ctrl-a': 'core:select-all'
