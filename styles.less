@@ -59,12 +59,10 @@ atom-dock .tab-bar .tab.active {
 // =============== ATOM TEXT EDITOR ==================
 
 atom-text-editor.editor {
-      // color: white;
       background-color: #333;
 
-      //font: "monofur";
       .cursor {
-            //border-color: red;
+            border-color: #999;
       }
       .syntax--comment {
           // font-family: "monofur";
@@ -72,12 +70,37 @@ atom-text-editor.editor {
           // font-family: "Office Code Pro";
           //font-size: 1.2em;
           //font-style: italic;
+          color: #555;
+      }
+      .wrap-guide {
+          background-color: #444;
+      }
+      .selection .region {
+          background-color: #555;
       }
 }
 
-atom-text-editor .wrap-guide {
-    // background-color: #777;
-    background-color: #555;// #AB85AA;
+// ----- GUTTER -----
+atom-text-editor .gutter .line-number.cursor-line {
+    background-color: #444;
+    color: #ccc;
+}
+
+atom-text-editor .gutter[gutter-name="com.alexcorre.git-blame"] {
+    .blame-line.darker {
+        background-color: #222;
+        a, .text-highlight {
+            color: #f195ac;
+        }
+
+        // color: #333;
+    }
+    .blame-line.lighter {
+        background-color: #444;
+        a, .text-highlight {
+            color: #83c1ea; // #82DCFA;
+        }
+    }
 }
 
 // ----- TAB -----
@@ -100,13 +123,13 @@ atom-text-editor .wrap-guide {
 
 // ----- BUTTONS -----
 .btn {
-    background-color: #333; //proper selector, wrong prop
+    background-color: #333;
     color: #ccc;
 }
 
 // ----- BUTTONS -----
 .editor.mini {
-    background-color: #262626; //proper selector, wrong prop
+    background-color: #262626;
     color: #ccc;
 }
 
