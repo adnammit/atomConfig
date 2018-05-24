@@ -1,3 +1,15 @@
+// =============== WELCOME TO A NEW WINDOW  ==================
+atom-workspace {
+    background-color: #222;
+    color: #ccc;
+}
+
+background-tips ul.background-message {
+    color: #555;
+}
+
+
+
 // =============== TREE VIEW  ==================
 
 // ----- TREE VIEW HEADER -----
@@ -7,10 +19,56 @@ atom-dock .tab-bar .tab.active {
 }
 
 // ----- TREE FOLDER HEADER -----
-.tree-view .project-root-header {
+// .tree-view .project-root-header {
+//     background-color: #444;
+// }
+
+[theme-one-dark-ui-sticky-headers="sticky"] .tree-view .project-root-header {
     background-color: #444;
-    // color: red;
 }
+
+// ----- DEFAULT TREE TEXT -----
+.list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+    color: #aaa;
+}
+
+.list-group li:not(.list-nested-item).selected, .list-tree li:not(.list-nested-item).selected, .list-group li.list-nested-item.selected > .list-item, .list-tree li.list-nested-item.selected > .list-item {
+    color: #ccc;
+}
+
+// // .tree-view .selected:before, .list-group .selected::before, .list-tree .selected::before
+// .tree-view .selected:before, .list-group .selected::before, .list-tree .selected::before {
+//     color: red;
+// }
+
+// ----- IGNORED TREE TEXT -----
+.list-group li:not(.list-nested-item).status-ignored, .list-tree li:not(.list-nested-item).status-ignored, .list-group li.list-nested-item.status-ignored > .list-item, .list-tree li.list-nested-item.status-ignored > .list-item {
+    color: #777;
+}
+
+// ----- MODIFIED TREE TEXT -----
+.list-group li:not(.list-nested-item).status-modified, .list-tree li:not(.list-nested-item).status-modified, .list-group li.list-nested-item.status-modified > .list-item, .list-tree li.list-nested-item.status-modified > .list-item {
+    color: #f195ac;
+}
+
+// ----- MODIFIED SELECTED TREE TEXT -----
+.list-group li:not(.list-nested-item).selected.status-modified, .list-tree li:not(.list-nested-item).selected.status-modified, .list-group li.list-nested-item.selected.status-modified > .list-item, .list-tree li.list-nested-item.selected.status-modified > .list-item {
+    color: #e25a7c;
+}
+
+// ----- ADDED TREE TEXT -----
+.list-group li:not(.list-nested-item).status-added, .list-tree li:not(.list-nested-item).status-added, .list-group li.list-nested-item.status-added > .list-item, .list-tree li.list-nested-item.status-added > .list-item {
+    color: #83c1ea;
+}
+
+// ----- ADDED SELECTED TREE TEXT -----
+.list-group li:not(.list-nested-item).selected.status-added, .list-tree li:not(.list-nested-item).selected.status-added, .list-group li.list-nested-item.selected.status-added > .list-item, .list-tree li.list-nested-item.selected.status-added > .list-item {
+    color: #42a4e5;
+}
+
+
+
+
 
 // ----- HIDDEN TOGGLE TAB -----
 .atom-dock-toggle-button .atom-dock-toggle-button-inner {
@@ -134,20 +192,23 @@ atom-text-editor .gutter[gutter-name="com.alexcorre.git-blame"] {
 }
 
 
+// =============== SYNTAX ==================
+.syntax--punctuation.syntax--definition.syntax--comment {
+    color: #444;
+}
+
 
 // =============== SCROLLBARS ==================
 
 // ----- V SCROLL BAR -----
-.scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-thumb {
+.scrollbars-visible-always ::-webkit-scrollbar-thumb, .scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-thumb {
     background: #888;
 }
 
 // ----- V SCROLL GUTTER -----
-.scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-track {
+.scrollbars-visible-always ::-webkit-scrollbar-track, .scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-track {
     background: #333;
 }
-
-
 
 // =============== MARKDOWN PREVIEW  ==================
 
