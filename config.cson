@@ -1,96 +1,30 @@
 "*":
-  "atom-beautify":
-    general:
-      _analyticsUserId: "3bdcb795-cdc6-4dd3-8926-b45be43eda5c"
-      beautifyEntireFileOnSave: false
-    html:
-      indent_char: "    "
-      indent_inner_html: true
-    js:
-      indent_char: "    "
-      indent_with_tabs: false
-  "atom-notes": {}
-  "autoclose-html":
-    forceInline: [
-      "title"
-      "h1"
-      "h2"
-      "h3"
-      "h4"
-      "h5"
-      "h6"
-      "Synthetic"
-      "Str"
-      "int"
-      "Val_list"
-    ]
-    legacyMode: true
-  "autocomplete-plus":
-    confirmCompletion: "tab always, enter when suggestion explicitly selected"
-    includeCompletionsFromAllBuffers: false
-    strictMatching: true
-  "bracket-matcher":
-    alwaysSkipClosingPairs: true
-    highlightMatchingLineNumber: true
   core:
+    autoHideMenuBar: true
+    closeDeletedFileTabs: true
     closeEmptyWindows: false
     disabledPackages: [
-      "notebook"
-      "pigments"
-      "plscript"
-      "plscript"
-      "script"
-      "terminal-status"
-      "atom-wrap-in-tag"
-      "wrap-selection"
-      "atom-plscript"
-      "busy-signal"
-      "intentions"
-      "linter"
-      "linter-ui-default"
-      "linter-xmllint"
-    ]
-    excludeVcsIgnoredPaths: false
-    packagesWithKeymapsDisabled: [
-      "git-blame"
-      "move-by-paragraph"
-      "autoclose-html"
-      "tag"
+      "file-icons"
     ]
     telemetryConsent: "limited"
-    themes: [
-      "one-dark-ui"
-      "vice-city-syntax"
-    ]
-    uriHandlerRegistration: "always"
   editor:
-    atomicSoftTabs: false
     fontFamily: "liberation mono"
-    fontSize: 15
-    invisibles: {}
+    fontSize: 13
+    preferredLineLength: 72
+    scrollPastEnd: true
+    showCursorOnSelection: false
     softWrap: true
     tabLength: 4
     tabType: "soft"
   "exception-reporting":
-    userId: "7786e388-505a-a7a4-d54d-6fab3753bb08"
-  fonts:
-    fontFamily: "Office Code Pro"
+    userId: "d0fe51be-40bb-4762-b303-b9a8c83d4186"
   "git-blame":
-    columnWidth: 242
-    customCommitUrlTemplateString: "ssh://dev-src.portland.perflogic.com:20022/src/git/main.git"
-    dateFormatString: "MM-DD-YY"
+    colorCommitAuthors: true
     ignoreWhiteSpaceDiffs: true
     showHash: false
     showOnlyLastNames: true
-  "git-diff":
-    showIconsInEditorGutter: true
-  "linter-xmllint": {}
-  "markdown-pdf":
-    format: "Letter"
-  "markdown-preview":
-    allowUnsafeProtocols: true
+  "line-ending-selector":
+    defaultLineEnding: "LF"
   "tree-view":
-    hideVcsIgnoredFiles: true
-  welcome:
-    showOnStartup: false
-  "wrap-with-anything": {}
+    alwaysOpenExisting: true
+    hideIgnoredNames: true

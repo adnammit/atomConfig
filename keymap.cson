@@ -74,7 +74,6 @@
     'cmd-shift-right': 'editor:select-to-next-subword-boundary'
     'cmd-shift-left': 'editor:select-to-previous-subword-boundary'
 
-
 # # TO DO
 # '.div.editor':
 #     'ctrl-space': 'emacs:set-mark'
