@@ -275,6 +275,9 @@
     'cmd-u cmd-u': 'editor:upper-case'
 
 '.platform-win32 atom-workspace atom-text-editor:not([mini]), .platform-linux atom-workspace atom-text-editor:not([mini])':
+  'ctrl-b': 'unset!'
+  'alt-y': 'emmet:expand-abbreviation'
+
     # ====== UNDO ALL THE CTRL-K STUFF ======
   'ctrl-k ctrl-0': 'unset!'
   'ctrl-k ctrl-1': 'unset!'
