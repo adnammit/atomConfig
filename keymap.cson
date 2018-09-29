@@ -9,6 +9,7 @@
 #   '>': 'autoclose-html:close-and-complete'
 
 
+
 '.platform-win32, .platform-linux':
   'ctrl-k ctrl-b': 'unset!'
   'alt-t':'tree-view:toggle'
@@ -256,17 +257,27 @@
 
 'atom-text-editor:not([mini])':
     'alt-b': 'git-blame:toggle'
+    # 'alt-shift-l': 'custom:lock-current-file'
 
-'atom-workspace':
-    'alt-shift-p': 'plscript:toggle'
-    'ctrl-b': 'plscript:add-breakpoint'
-    'ctrl-alt-c': 'plscript:clear-breakpoints'
+# 'atom-text-editor':
+#     'alt-shift-l': 'plscript:lock-file'
+#     'alt-shift-y': 'plscript:woof'
+#     'alt-shift-w': 'plscript:make-writeable'
+
+# 'atom-workspace':
+#     # 'alt-shift-p': 'plscript:toggle'
+#     'ctrl-b': 'plscript:add-breakpoint'
+#     'ctrl-alt-c': 'plscript:clear-breakpoints'
 
 '.platform-win32 atom-workspace atom-text-editor, .platform-win32 atom-workspace atom-text-editor':
     'ctrl-k ctrl-l': 'unset!' #'editor:lower-case'
     'ctrl-k ctrl-u': 'unset!'
     'ctrl-u ctrl-l': 'editor:lower-case'
     'ctrl-u ctrl-u': 'editor:upper-case'
+
+    'alt-shift-up': 'core:select-to-top'
+    'alt-shift-down': 'core:select-to-bottom'
+
 
 '.platform-darwin atom-workspace atom-text-editor':
     'cmd-k cmd-l': 'unset!'

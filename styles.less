@@ -2,6 +2,9 @@
 atom-workspace {
     background-color: #222;
     color: #ccc;
+    // font-family: "Code New Roman";
+    font-family: "DejaVu Mono";
+    // font-family: Bitstream Vera Sans Mono;
 }
 
 background-tips ul.background-message {
@@ -17,6 +20,21 @@ atom-dock .tab-bar .tab.active {
     background-color: #555;
     color: #ccc;
 }
+
+.tool-panel.tree-view,
+ol.entries.list-tree,
+li.directory.entry.list-nested-item {
+    background-color: #222;
+    color: #555;
+}
+li.file.entry.list-item.status-ignored.selected::before {
+    background-color: #333;
+    color: #555;
+}
+// li.directory.entry.list-nested-item {
+//     background-color: #222;
+//     color: #555;
+// }
 
 // ----- TREE FOLDER HEADER -----
 // .tree-view .project-root-header {
@@ -66,7 +84,10 @@ atom-dock .tab-bar .tab.active {
     color: #42a4e5;
 }
 
-
+// // ----- V SCROLL GUTTER -----
+// .left.scrollbars-visible-always ::-webkit-scrollbar-track, .left.scrollbars-visible-always ::-webkit-scrollbar-track {
+//     background: red;
+// }
 
 
 
@@ -139,9 +160,12 @@ atom-text-editor.editor {
 }
 
 // ----- GUTTER -----
-atom-text-editor .gutter .line-number.cursor-line {
-    background-color: #444;
-    color: #ccc;
+
+atom-text-editor .gutter {
+    .line-number.cursor-line, .line-number.bracket-matcher {
+        background-color: #444;
+        color: #ccc;
+    }
 }
 
 atom-text-editor .gutter[gutter-name="com.alexcorre.git-blame"] {
@@ -192,6 +216,65 @@ atom-text-editor .gutter[gutter-name="com.alexcorre.git-blame"] {
 }
 
 
+// =============== STATUS BAR ==================
+
+status-bar .inline-block, status-bar-file.file-info.inline-block a, status-bar-cursor.cursor-position.inline-block a {
+    color: #888;
+}
+
+status-bar-file.file-info.inline-block:hover,
+status-bar-file.file-info.inline-block a:hover,
+status-bar .line-ending-tile.inline-block:hover  {
+    background-color: #222;
+    color: #666;
+}
+
+status-bar-cursor.cursor-position.inline-block:hover,
+status-bar-cursor.cursor-position.inline-block a:hover {
+    background-color: #222;
+    color: #666;
+}
+
+encoding-selector-status.encoding-status.inline-block:hover,
+encoding-selector-status.encoding-status.inline-block a:hover {
+    background-color: #222;
+    color: #666;
+}
+
+grammar-selector-status.grammar-status.inline-block:hover,
+grammar-selector-status.grammar-status.inline-block a:hover {
+    background-color: #222;
+    color: #666;
+}
+
+.github-branch.inline-block:hover, .github-PushPull.inline-block:hover,
+a.github-ChangedFilesCount.inline-block:hover,
+.package-updates-status-view.inline-block.text.text-info:hover {
+    background-color: #222;
+    color: #666;
+}
+
+
+// =============== PANELS ==================
+
+.panel-heading {
+    background-color: #333;
+    color: #ccc;
+}
+
+.stdout {
+    // color: #888;
+    color: #337015;
+    // background-color: #111;
+    // font-family: "Source Code Pro";
+
+    // font-family: "Average Mono";
+    font-family: "Courier Prime Code";
+    font-weight: 800;
+    // font-size: 0.8em;
+}
+
+
 // =============== SYNTAX ==================
 .syntax--punctuation.syntax--definition.syntax--comment {
     color: #444;
@@ -202,13 +285,15 @@ atom-text-editor .gutter[gutter-name="com.alexcorre.git-blame"] {
 
 // ----- V SCROLL BAR -----
 .scrollbars-visible-always ::-webkit-scrollbar-thumb, .scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #555;
+    border: 3px solid #333;
 }
 
 // ----- V SCROLL GUTTER -----
 .scrollbars-visible-always ::-webkit-scrollbar-track, .scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-track {
     background: #333;
 }
+
 
 // =============== MARKDOWN PREVIEW  ==================
 
