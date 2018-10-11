@@ -1,0 +1,9 @@
+{
+    "atom-workspace": {
+        "ctrl-b": "plscript:add-breakpoint",
+        "ctrl-alt-c": "plscript:clear-breakpoints",
+        "alt-shift-k": "plscript:list-locks",
+        "alt-shift-l": "plscript:lock-file",
+        "alt-shift-p": "plscript:get-prop-list"
+    }
+}

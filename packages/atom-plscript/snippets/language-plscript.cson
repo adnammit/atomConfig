@@ -1,0 +1,153 @@
+'.text.plscript':
+
+# TAGS -----------------------------------------------------------------
+
+  'Script_func Tag':
+    'prefix': 'Script_func'
+    'body': '<Script_func name="${1:name}">\n <Str name="script">\n${2:contents}\n </Str>\n</Script_func>'
+
+  'Str Tag':
+    'prefix': 'Str'
+    'body': '<Str name="${1:name}">\n${2:contents}\n</Str>'
+
+  'int Tag':
+    'prefix': 'int'
+    'body': '<int name="${1:name}">\n${2:1}\n</int>'
+
+  'regular tag':
+    'prefix': 'tag'
+    'body': '<${1:Str}>\n${2:contents}\n</${1:Str}>'
+
+  'tag with name':
+    'prefix': 'tagname'
+    'body': '<${1:Str} name="${2:name}">\n${3:contents}\n</${1:Str}>'
+
+# DEBUG ----------------------------------------------------------------
+
+  'Warning':
+    'prefix': 'warning'
+    'body': 'make_wng = M_loader::load_val("dat/common/layout/Make_warning_dialog.dat");\nmake_wng.object = this;\n\nform_item = make("Synthetic");\nform_item.message = "${1:warning message}";\nform_item.no_cancel = 1;\n\nmake_wng(form_item);'
+
+  'debug':
+    'prefix': 'debug'
+    'body': 'Alert_mgr::set_message(${1:debug_msg}, -1);'
+
+# STR_UTIL -------------------------------------------------------------
+
+  'Make Str util':
+    'prefix': 'str_util'
+    'body': 'Str_util::${1:}'
+
+  'join':
+    'prefix': 'join'
+    'body': 'Str_util::join(${1:obj},${2:", "});'
+
+  'split':
+    'prefix': 'split'
+    'body': 'Str_util::split(${1:str},"${2:|}");'
+
+# SYNTACTIC SHORTCUTS --------------------------------------------------
+
+  'Layout func args':
+    'prefix': 'layout_args'
+    'body': 'form_item = arg[0];\nform_object = arg[1];\nenv = arg[2];'
+
+  'Get Property':
+    'prefx': 'get_prop'
+    'body': 'get_property(${1:obj}, ${2:prop_name});'
+
+  'While loop':
+    'prefix': 'while'
+    'body': '${1:i} = ${2:start};\nwhile(${1:i} < ${3:object}.size)\n{\n    curr_item = ${3:object}.item[${1:i}];\n}'
+
+  'For Loop':
+    'prefix': 'for'
+    'body': 'for(${1:i}=0; ${1:i}<${2:object}.size; ${1:i}+=1)\n{\n    ${3:curr}=${2:object}.item[${1:i}];\n}'
+
+  'Foreach Loop':
+    'prefix': 'foreach'
+    'body': 'foreach(${1:item}, ${2:list})\n{\n    ${3:do_the_thing};\n}'
+
+# MAKE -----------------------------------------------------------------
+
+  'Make Synthetic':
+    'prefix': 'msynthetic'
+    'body': '${1:synth}=make("Synthetic");'
+
+  'Make Script_func':
+    'prefix': 'mscriptfunc'
+    'body': '${1:func}=make("Script_func","${2:filename}.dat");'
+
+  'Make Val_list':
+    'prefix': 'mvallist'
+    'body': '${1:list}=make("Val_list");'
+
+  'Make Query':
+    'prefix': 'query'
+    'body': 'Query::${1:find(${2:});}'
+
+  'Make Alert Mgr':
+    'prefix': 'alert_mgr'
+    'body': 'Alert_mgr::${1:set_message(${2:});}'
+
+  'Make Object Mgr':
+    'prefix': 'obj_mgr'
+    'body': 'Object_mgr::'
+
+  'Make M_Loader':
+    'prefix': 'mloader'
+    'body': 'M_loader::${1:load_val(${2:});}'
+
+  # 'Make Load Statement':
+  #   'prefix': 'mload_statement'
+  #   'body': '${1:foo}=M_loader::load_val("${2:filename}");'
+
+  'Make __CUSTOM_PATH__-common Load':
+    'prefix': 'mloadcustom'
+    'body': '${1:foo}=M_loader::load_val("__CUSTOM_PATH__|dat/common/${2:subdir}","${3:filename}");'
+
+  'Make Copier':
+    'prefix': 'copier'
+    'body': 'Copier::${1:copy(${2:});}'
+
+  'Make List util':
+    'prefix': 'list_util'
+    'body': 'List_util::'
+
+  'Make Date util':
+    'prefix': 'date_util'
+    'body': 'Date_util::'
+
+  'Make Prop extractor':
+    'prefix': 'propextractor'
+    'body': 'Prop_extractor::extract(${1:list},${2:propname});'
+
+  'Make element':
+    'prefix': 'make_element'
+    'body': 'make_element = make("Script_func", "dat/common/layout/Make_element.dat");\nmake_element.object = this;'
+
+# COMMON CONTEXT ITEMS -------------------------------------------------
+
+  'Permits':
+    'prefix': 'mpermits'
+    'body': 'permits=find_context_value("permits");\nif(!permits)\n    permits=top_parent.data.permits;'
+
+  'Make All Users':
+    'prefix': 'mall_users'
+    'body': 'all_users=find_context_value("all_users");\nif(!all_users && permits)\n    all_users=permits.all_users;'
+
+  'Make Org Info':
+    'prefix': 'morg_info'
+    'body': 'org_info=find_context_value("org_info");\nif(!org_info)\n    org_info=top_parent.data.org_info;'
+
+  'Make Project':
+    'prefix': 'mproject'
+    'body': 'project=find_context_value("project");\nif(!project)\n    project=top_parent.data.current_project;'
+
+  'Make Stub':
+    'prefix': 'mstub'
+    'body': 'stub=find_context_value("project_stub");\nif(!stub)\n    stub=top_parent.data.current_stub;'
+
+  'Make Stub Tree':
+    'prefix': 'mstub_tree'
+    'body': 'stub_tree=find_context_value("stub_tree");\nif(!stub_tree)\n    stub_tree=top_parent.data.stub_tree;'

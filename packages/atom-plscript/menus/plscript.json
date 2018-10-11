@@ -1,0 +1,50 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Add Breakpoint",
+        "command": "plscript:add-breakpoint"
+      },
+      {
+          "label": "List Locks",
+          "command": "plscript:list-locks"
+      },
+      {
+          "label": "Lock File",
+          "command": "plscript:lock-file"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "plscript",
+          "submenu": [
+            {
+              "label": "Add Breakpoint",
+              "command": "plscript:add-breakpoint"
+            },
+            {
+                "label": "Clear Breakpoints",
+                "command": "plscript:clear-breakpoints"
+            },
+            {
+                "label": "List Locks",
+                "command": "plscript:list-locks"
+            },
+            {
+                "label": "Lock File",
+                "command": "plscript:lock-file"
+            },
+            {
+                "label": "Get Prop List",
+                "command": "plscript:get-prop-list"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
