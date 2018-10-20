@@ -134,8 +134,6 @@
 
 'body.platform-darwin':
 # ====== UNDO ALL THE cmd-* STUFF ======
-    # 'cmd-k cmd-u': 'unset!'
-
     # 'alt-1': 'unset!' # pane:show-item-1'
     # 'alt-2': 'unset!' # pane:show-item-1'
     # 'alt-3': 'unset!' # pane:show-item-1'
@@ -145,12 +143,13 @@
     # 'alt-7': 'unset!' # pane:show-item-1'
     # 'alt-8': 'unset!' # pane:show-item-1'
     # 'alt-9': 'unset!' # pane:show-item-1'
-
+    'cmd-k cmd-u': 'unset!'
     'cmd-k down': 'unset!'
     'cmd-k left': 'unset!'
     'cmd-k right': 'unset!'
     'cmd-k up': 'unset!'
-
+    'cmd-k cmd-w': 'unset!'#'pane:close'
+    'cmd-k cmd-alt-w': 'unset!'
     'cmd-k cmd-up': 'unset!'
     'cmd-k cmd-right': 'unset!'
     'cmd-k cmd-left': 'unset!'
@@ -171,16 +170,18 @@
     'cmd-k cmd-alt-w': 'unset!'
     'cmd-k cmd-p': 'unset!' #'window:focus-previous-pane'
     'cmd-k cmd-n': 'unset!' #'window:focus-next-pane'
-
     'cmd-shift-T': 'unset!' #'pane:reopen-closed-item'
     'cmd-up':'unset!'
     'cmd-down':'unset!'
-
     'cmd-`': 'core:close'
     'ctrl-shift-a':'application:add-project-folder'
+    'cmd-u cmd-up': 'pane:split-up-and-copy-active-item'
+    'cmd-u right': 'pane:split-right-and-copy-active-item'
+    'cmd-u left': 'pane:split-left-and-copy-active-item'
+    'cmd-u down': 'pane:split-down-and-copy-active-item'
 
-# 'body':
-#   'cmd-w': 'core:close'
+'body':
+  'cmd-w': 'core:close'
 
 '.platform-win32 .workspace, .platform-linux .workspace':
   'ctrl-8': 'unset!' #github:toggle-github-tab-focus'
@@ -349,12 +350,3 @@
   'cmd-shift-up':'editor:select-to-beginning-of-previous-paragraph'
   'cmd-down': 'editor:move-to-beginning-of-next-paragraph'
   'cmd-shift-down':'editor:select-to-beginning-of-next-paragraph'
-
-
-
-# 'atom-workspace.platform-win32 .editor .find-and-replace, .platform-linux atom-workspace .editor .find-and-replace':
-#   'ctrl-a': 'core:select-all'
-
-# '.platform-darwin atom-workspace .editor .find-and-replace':
-#   # 'ctrl-a': 'unset!'
-#   'cmd-a': 'core:select-all'
