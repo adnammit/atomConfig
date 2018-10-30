@@ -4,6 +4,7 @@
         "ctrl-alt-c": "plscript:clear-breakpoints",
         "alt-shift-k": "plscript:list-locks",
         "alt-shift-l": "plscript:lock-file",
-        "alt-shift-p": "plscript:get-prop-list"
+        "alt-shift-p": "plscript:get-prop-list",
+        "alt-shift-c": "plscript:clean-file"
     }
 }

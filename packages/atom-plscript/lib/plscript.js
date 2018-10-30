@@ -45,6 +45,7 @@ export default {
             'plscript:list-locks': () => this.listLocks(),
             'plscript:lock-file': () => this.lockFile(),
             'plscript:get-prop-list': () => this.getPropList(),
+            'plscript:clean-file': () => this.cleanFile(),
         }));
     },
 
@@ -136,6 +137,149 @@ export default {
         return;
     },
 
+    // This is pretty over-simplified.
+    // If there is something silly like `sally=make("Alert_mgr");`, we should search all instances of
+    //      'sally' and replace with 'Alert_mgr::' but that is for another time...
+    cleanFile() {
+        const textBuffer = atom.workspace.getActiveTextEditor().getBuffer();
+        let buffText = textBuffer.getText();
+
+        const map = [];
+
+        map.push({'regex': /\t/gi, 'val': '        '});
+        map.push({'regex': /\r/gi, 'val': ''});
+
+
+        map.push({'regex': /\bhg *= *make\("Hourglass"\);\s+/g, 'val': ''});
+
+        map.push({'regex': /\b(alert_mgr|am) *= *make\("Alert_mgr"\);\s+/g, 'val': ''});
+        map.push({'regex': /\b(alert_mgr|am|make\("Alert_mgr"\))\./g, 'val': 'Alert_mgr::'});
+
+        map.push({'regex': /\b(str_util|su) *= *make\("Str_util"\);\s+/g, 'val': ''});
+        map.push({'regex': /\b(str_util|su|make\("Str_util"\))\./g, 'val': 'Str_util::'});
+
+        map.push({'regex': /\b(query|q) *= *make\("Query"\);\s+/g, 'val': ''});
+        map.push({'regex': /\b(query|q|make\("Query"\))\./g, 'val': 'Query::'});
+
+        map.push({'regex': /\bobj_mgr *= *make\("Object_mgr"\);\s+/g, 'val': ''});
+        map.push({'regex': /\b(obj_mgr|make\("Object_mgr"\))\./g, 'val': 'Object_mgr::'});
+
+        map.push({'regex': /\b(list_util|lu) *= *make\("List_util"\);\s+/g, 'val': ''});
+        map.push({'regex': /\b(list_util|lu|make\("List_util"\))\./g, 'val': 'List_util::'});
+
+        map.push({'regex': /\b(prop_extractor|pe) *= *make\("Prop_extractor"\);\s+/g, 'val': ''});
+        map.push({'regex': /\b(prop_extractor|pe|make\("Prop_extractor"\))\./g, 'val': 'Prop_extractor::'});
+
+        map.push({'regex': /\b(date_util|du) *= *make\("Date_util"\);\s+/g, 'val': ''});
+        map.push({'regex': /\b(date_util|du|make\("Date_util"\))\./g, 'val': 'Date_util::'});
+
+        map.push({'regex': /\bcopier *= *make\("Copier"\);\s+/g, 'val': ''});
+        map.push({'regex': /\b(copier|make\("Copier"\))\./g, 'val': 'Copier::'});
+
+        // // M_loader replacements might have to be manually done b/c sometimes 'loader' is still Loader:: :(
+        // map.push({'regex': /\s+(loader|m_loader) *= *make\("M_loader"\);\s+/g, 'val': '\n'});
+        // map.push({'regex': /\b(loader|m_loader|make\("M_loader"\))\./g, 'val': 'M_loader::'});
+
+        for(i = 0; i < map.length; i++) {
+            buffText = buffText.replace(map[i].regex,map[i].val);
+        }
+
+        if(!/\bmake\("Loader"\)/g.test(buffText)) {
+            buffText = buffText.replace(/\b(loader|m_loader) *= *make\("M_loader"\);\s+/g, '');
+            buffText = buffText.replace(/\b(loader|m_loader|make\("M_loader"\))\./g, 'M_loader::');
+        } else {
+            this.holler(`This file contains instances of 'Loader'. Manual replacements with 'M_loader' are required.`);
+        }
+
+        textBuffer.setText(buffText);
+    },
+
+    //// so that's ^ ok....  but the indenting is weird.
+    //// would be better to use the below because:
+    ////        use textBuffer's built-in methods is probably better
+    ////        but for some reason, the regexes in replacements are not matching and
+    ////            replacements are erroring
+
+    // cleanFile() {
+    //     const textBuffer = atom.workspace.getActiveTextEditor().getBuffer();
+    //     const textLines = textBuffer.getLines();
+    //
+    //     const replacements = [];
+    //     const removals = [];
+    //
+    //     replacements.push({'regex': /\t/gi, 'val': '        '});
+    //     replacements.push({'regex': /\r/gi, 'val': ''});
+    //
+    //     removals.push(/\s+(alert_mgr|am) *= *make\("Alert_mgr"\);\s+/g);
+    //     replacements.push({'regex': /\b(alert_mgr|am|make\("Alert_mgr"\))\./g, 'val': 'Alert_mgr::'});
+    //
+    //     removals.push(/\s+(str_util|su) *= *make\("Str_util"\);\s+/g);
+    //     replacements.push({'regex': /\b(str_util|su|make\("Str_util"\))\./g, 'val': 'Str_util::'});
+    //
+    //     removals.push(/\s+(query|q) *= *make\("Query"\);\s+/g);
+    //     replacements.push({'regex': /\b(query|q|make\("Query"\))\./g, 'val': 'Query::'});
+    //
+    //     // // M_loader replacements might have to be manually done b/c sometimes 'loader' is still Loader:: :(
+    //     // replacements.push({'regex': /\s+(loader|m_loader) *= *make\("M_loader"\);\s+/g, 'val': '\n'});
+    //     // replacements.push({'regex': /\b(loader|m_loader|make\("M_loader"\))\./g, 'val': 'M_loader::'});
+    //
+    //     removals.push(/\s+obj_mgr *= *make\("Object_mgr"\);\s+/g);
+    //     replacements.push({'regex': /\b(obj_mgr|make\("Object_mgr"\))\./g, 'val': 'Object_mgr::'});
+    //
+    //     removals.push(/\s+(list_util|lu) *= *make\("List_util"\);\s+/g);
+    //     replacements.push({'regex': /\b(list_util|lu|make\("List_util"\))\./g, 'val': 'List_util::'});
+    //
+    //     removals.push(/\s+(prop_extractor|pe) *= *make\("Prop_extractor"\);\s+/g);
+    //     replacements.push({'regex': /\b(prop_extractor|pe|make\("Prop_extractor"\))\./g, 'val': 'Prop_extractor::'});
+    //
+    //     removals.push(/\s+(date_util|du) *= *make\("Date_util"\);\s+/g);
+    //     replacements.push({'regex': /\b(date_util|du|make\("Date_util"\))\./g, 'val': 'Date_util::'});
+    //
+    //     removals.push(/\s+copier *= *make\("Copier"\);\s+/g);
+    //     replacements.push({'regex': /\b(copier|make\("Copier"\))\./g, 'val': 'Copier::'});
+    //
+    //     console.log('# removal regexes '+removals.length);
+    //
+    //     let line, lineNum, removal, removed;
+    //     const removeLines = [];
+    //     for(lineNum = 0; lineNum < textLines.length; lineNum++) {
+    //         line = textLines[lineNum];
+    //         removed = false;
+    //
+    //         // console.log('testing line '+line);
+    //
+    //         for(j = 0; j < removals.length && !removed; j++) {
+    //             removal = removals[j];
+    //
+    //             console.log('is removal a regex? '+(removal instanceof RegExp));
+    //             // console.log('testing '+removal+' for line \n'+line);
+    //
+    //             if(removal.test(line)) {
+    //                 removeLines.push(lineNum);
+    //                 removed = true;
+    //                 console.log('matched '+removal);
+    //             }
+    //         }
+    //     }
+    //
+    //
+    //     console.log('# removing lines '+removeLines.length);
+    //
+    //
+    //     for(i = 0; i < removeLines.length; i++) {
+    //         console.log('removing lines '+removeLines[i]);
+    //     }
+    //
+    //     for(i = 0; i < removeLines.length; i++) {
+    //         textBuffer.deleteRow(removeLines[i]);
+    //     }
+    //
+    //     // for(i = 0; i < replacements.length; i++) {
+    //     //     textBuffer.replace(replacements.regex, replacements.val);
+    //     // }
+    //
+    // },
+
     convertWindowsPathToLinux(filepath) {
         const isAbsolutePath = filepath.indexOf(':\\') == 1;
         let ret = filepath.replace(/\\/g, '/');
@@ -186,6 +330,5 @@ export default {
             exit
         });
     }
-
 
 };
