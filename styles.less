@@ -1,15 +1,34 @@
+@hiclr: #e6e6e6;
+@clr: #ccc;
+@midclr: #aaa;
+@hiignored: #666;
+@lowignored: #404040;
+@bg: #333;
+@lowbg: #262626;
+@pitch: #1a1a1a;
+// --- BISEXUAL LIGHTING -----------------------------------------------
+@bipinklow: #f195ac;
+@bipinkhi: #e25a7c;
+@bibluelow: #83c1ea;
+@bibluehi: #42a4e5;
+
+.default-style {
+    background-color: @bg;
+    color: @clr;
+}
+
+
 // === WELCOME TO A NEW WINDOW =========================================
 
+// --- UI LOOK ---------------------------------------------------------
 atom-workspace {
-    background-color: #222;
-    color: #ccc;
-    // font-family: "Code New Roman";
+    background-color: @lowbg;
+    color: @clr;
     font-family: "DejaVu Mono";
-    // font-family: Bitstream Vera Sans Mono;
 }
 
 background-tips ul.background-message {
-    color: #555;
+    color: @lowignored;
 }
 
 
@@ -17,93 +36,64 @@ background-tips ul.background-message {
 // === TREE VIEW =======================================================
 
 // --- TREE VIEW HEADER ------------------------------------------------
-atom-dock .tab-bar .tab.active {
-    background-color: #555;
-    color: #ccc;
-}
-
+atom-dock .tab-bar .tab.active,
+.tree-view .tree-view-root,
 .tool-panel.tree-view,
 ol.entries.list-tree,
 li.directory.entry.list-nested-item {
-    background-color: #222;
-    color: #555;
+    background-color: @lowbg;
+    color: @clr;
 }
-li.file.entry.list-item.status-ignored.selected::before {
-    background-color: #333;
-    color: #555;
-}
-// li.directory.entry.list-nested-item {
-//     background-color: #222;
-//     color: #555;
-// }
 
 // --- TREE FOLDER HEADER ----------------------------------------------
-// .tree-view .project-root-header {
-//     background-color: #444;
-// }
-
-[theme-one-dark-ui-sticky-headers="sticky"] .tree-view .project-root-header {
-    background-color: #444;
+.tree-view .selected:before,
+.tree-view:focus .selected:before,
+.list-tree li.list-nested-item.selected > .list-item,
+li.file.entry.list-item.status-ignored.selected::before {
+    .default-style;
 }
 
 // --- DEFAULT TREE TEXT -----------------------------------------------
 .list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
-    color: #aaa;
+    color: @midclr;
 }
 
 .list-group li:not(.list-nested-item).selected, .list-tree li:not(.list-nested-item).selected, .list-group li.list-nested-item.selected > .list-item, .list-tree li.list-nested-item.selected > .list-item {
-    color: #ccc;
+    color: @clr;
 }
-
-// // .tree-view .selected:before, .list-group .selected::before, .list-tree .selected::before
-// .tree-view .selected:before, .list-group .selected::before, .list-tree .selected::before {
-//     color: red;
-// }
 
 // --- IGNORED TREE TEXT -----------------------------------------------
 .list-group li:not(.list-nested-item).status-ignored, .list-tree li:not(.list-nested-item).status-ignored, .list-group li.list-nested-item.status-ignored > .list-item, .list-tree li.list-nested-item.status-ignored > .list-item {
-    color: #777;
+    color: @hiignored;
 }
 
 // --- MODIFIED TREE TEXT ----------------------------------------------
 .list-group li:not(.list-nested-item).status-modified, .list-tree li:not(.list-nested-item).status-modified, .list-group li.list-nested-item.status-modified > .list-item, .list-tree li.list-nested-item.status-modified > .list-item {
-    color: #f195ac;
+    color: @bipinklow;
 }
 
 // --- MODIFIED SELECTED TREE TEXT -------------------------------------
 .list-group li:not(.list-nested-item).selected.status-modified, .list-tree li:not(.list-nested-item).selected.status-modified, .list-group li.list-nested-item.selected.status-modified > .list-item, .list-tree li.list-nested-item.selected.status-modified > .list-item {
-    color: #e25a7c;
+    color: @bipinkhi;
 }
 
 // --- ADDED TREE TEXT -------------------------------------------------
 .list-group li:not(.list-nested-item).status-added, .list-tree li:not(.list-nested-item).status-added, .list-group li.list-nested-item.status-added > .list-item, .list-tree li.list-nested-item.status-added > .list-item {
-    color: #83c1ea;
+    color: @bibluelow;
 }
 
 // --- ADDED SELECTED TREE TEXT ----------------------------------------
 .list-group li:not(.list-nested-item).selected.status-added, .list-tree li:not(.list-nested-item).selected.status-added, .list-group li.list-nested-item.selected.status-added > .list-item, .list-tree li.list-nested-item.selected.status-added > .list-item {
-    color: #42a4e5;
+    color: @bibluehi;
 }
 
-// // ----- V SCROLL GUTTER -----
-// .left.scrollbars-visible-always ::-webkit-scrollbar-track, .left.scrollbars-visible-always ::-webkit-scrollbar-track {
-//     background: red;
-// }
 
-
-
-// --- HIDDEN TOGGLE TAB -----------------------------------------------
-.atom-dock-toggle-button .atom-dock-toggle-button-inner {
-    background-color: #333;
-    color: #ccc;
-}
-
-.tree-view {
-    background-color: #333;
-}
-
+// --- GUTTER, HIDDEN TOGGLE TAB -----------------------------------------------
+.atom-dock-toggle-button .atom-dock-toggle-button-inner,
+.tree-view,
 .editor .gutter {
-    background-color: #333;
+    background-color: @bg;
+    color: @midclr;
 }
 
 
@@ -111,12 +101,12 @@ li.file.entry.list-item.status-ignored.selected::before {
 
 // --- BACKGROUND BAR BEHIND TABS --------------------------------------
 .tab-bar {
-    background-color: #111;
+    background-color: @pitch;
 }
 
 // --- ACTIVE TABS -----------------------------------------------------
 .tab-bar .tab.active[data-type$="Editor"], .tab-bar .tab.active[data-type$="AboutView"], .tab-bar .tab.active[data-type$="TimecopView"], .tab-bar .tab.active[data-type$="StyleguideView"], .tab-bar .tab.active[data-type="MarkdownPreviewView"] {
-    background-color: #333;
+    background-color: @bg;
     // box-shadow: inset 1px 0 #555, inset 0 -1px 0 #555;
     // box-shadow: 1px 0 0 #777;
     // box-shadow: inset 0 -1px 0 #777, 1px 0 0 #777;
@@ -124,173 +114,187 @@ li.file.entry.list-item.status-ignored.selected::before {
 
 // --- INACTIVE TABS ---------------------------------------------------
 .tab-bar .tab {
-    background-color: #222;
-    box-shadow: inset 0 -1px 0 #555;
+    background-color: @lowbg;
+    box-shadow: inset 0 -1px 0 @lowbg;
     // box-shadow: inset 1px 0 0 #555, inset 0 -1px 0 #555;
 }
 .tab-bar .tab:last-of-type {
-    box-shadow: inset 0 -1px 0 #555;
+    box-shadow: inset 0 -1px 0 @lowbg;
     // box-shadow: inset 1px 0 0 #555, inset 0 -1px 0 #555;
 }
-
 
 
 // === ATOM TEXT EDITOR ================================================
 
 atom-text-editor.editor {
-      background-color: #333;
-
+      background-color: @bg;
       .cursor {
-            border-color: #999;
+            border-color: @hiclr;
       }
       .syntax--comment {
-          // font-family: "monofur";
-          //font-size: 15px;
-          // font-family: "Office Code Pro";
-          //font-size: 1.2em;
-          //font-style: italic;
-          color: #555;
+          // font-family: "Script12";
+          font-family: "Lucida Sans Typewriter";
+          font-style: italic;
+          color: @hiignored;
       }
       .wrap-guide {
-          background-color: #444;
+          background-color: @lowbg;
       }
       .selection .region {
-          background-color: #555;
+          background-color: @lowignored;
       }
 }
+
+// atom-text-editor::shadow {
+//     .string.quoted,
+//     .string.regexp {
+//         -webkit-font-feature-settings: "liga" off, "calt" off;
+//     }
+//     .source.js.jsx > .keyword.control.flow.js,
+//     .storage, .type .function {
+//         vertical-align: baseline;
+//         font-family: 'script12';
+//         height: inherit;
+//         font-size: 1.5em;
+//         line-height: 1rem;
+//     }
+//     .source.js.jsx,
+//     .storage.type.function.arrow.js,
+//     .variable {
+//         font-family: 'Fira Code';
+//         font-style: normal;
+//     }
+//     .string.unquoted.js {
+//         color: #CDD3DE;
+//     }
+//     .entity.name {
+//         font-weight: bold;
+//     }
+// }
 
 // --- GUTTER ----------------------------------------------------------
 atom-text-editor .gutter {
     .line-number.cursor-line, .line-number.bracket-matcher {
-        background-color: #444;
-        color: #ccc;
+        background-color: @lowignored;
+        color: @clr;
     }
 }
 
 atom-text-editor .gutter[gutter-name="com.alexcorre.git-blame"] {
     .blame-line.darker {
-        background-color: #222;
+        background-color: @lowbg;
         a, .text-highlight {
-            color: #f195ac;
+            color: @bipinklow;
         }
-
-        // color: #333;
     }
     .blame-line.lighter {
         background-color: #444;
         a, .text-highlight {
-            color: #83c1ea; // #82DCFA;
+            color: @bibluelow;
         }
     }
 }
 
-// --- TAB -------------------------------------------------------------
-.horizontal-scrollbar {
-    background-color: #333;
-    color: #ccc;
-}
 
-// --- FOOTER ----------------------------------------------------------
-.status-bar {
-    background-color: #333;
-    color: #ccc;
-}
-
-// --- FIND/REPLACE ----------------------------------------------------
-.tool-panel {
-    background-color: #333;
-    color: #ccc;
-}
-
-// --- BUTTONS ---------------------------------------------------------
-.btn {
-    background-color: #333;
-    color: #ccc;
-}
-
-// --- MORE BUTTONS ----------------------------------------------------
+// === MISC DETAILS ====================================================
+.horizontal-scrollbar,
+.tool-panel,
+.status-bar,
+.btn,
 .editor.mini {
-    background-color: #262626;
-    color: #ccc;
+    .default-style;
 }
 
 
 // === STATUS BAR ======================================================
 
 status-bar .inline-block, status-bar-file.file-info.inline-block a, status-bar-cursor.cursor-position.inline-block a {
-    color: #888;
+    color: @midclr;
 }
 
 status-bar-file.file-info.inline-block:hover,
 status-bar-file.file-info.inline-block a:hover,
-status-bar .line-ending-tile.inline-block:hover  {
-    background-color: #222;
-    color: #666;
-}
-
+status-bar .line-ending-tile.inline-block:hover,
 status-bar-cursor.cursor-position.inline-block:hover,
-status-bar-cursor.cursor-position.inline-block a:hover {
-    background-color: #222;
-    color: #666;
-}
-
+status-bar-cursor.cursor-position.inline-block a:hover,
 encoding-selector-status.encoding-status.inline-block:hover,
-encoding-selector-status.encoding-status.inline-block a:hover {
-    background-color: #222;
-    color: #666;
-}
-
+encoding-selector-status.encoding-status.inline-block a:hover,
 grammar-selector-status.grammar-status.inline-block:hover,
-grammar-selector-status.grammar-status.inline-block a:hover {
-    background-color: #222;
-    color: #666;
-}
-
+grammar-selector-status.grammar-status.inline-block a:hover,
 .github-branch.inline-block:hover, .github-PushPull.inline-block:hover,
 a.github-ChangedFilesCount.inline-block:hover,
 .package-updates-status-view.inline-block.text.text-info:hover {
-    background-color: #222;
-    color: #666;
+    background-color: @lowbg;
+    color: @hiignored;
 }
 
 
 // === PANELS ==========================================================
 
 .panel-heading {
-    background-color: #333;
-    color: #ccc;
+    .default-style;
 }
 
 .stdout {
-    // color: #888;
     color: #337015;
-    // background-color: #111;
-    // font-family: "Source Code Pro";
-
-    // font-family: "Average Mono";
     font-family: "Courier Prime Code";
     font-weight: 800;
-    // font-size: 0.8em;
 }
 
 
 // --- GIT -------------------------------------------------------------
 atom-pane-container {
-    background-color: #333;
-    color: #666;
+    background-color: @bg;
+    color: @hiignored;
 }
 
 .github-CommitView-editor {
-    background-color: #333;
-    color: #ccc;
+    .default-style;
 }
 
 
+// === SETTINGS ========================================================
+.settings-view .panels .panels-item,
+.settings-view .package-card,
+.settings-view .config-menu {
+    background-color: @bg;
+    color: @hiignored;
+
+    button {
+        .default-style;
+        :hover {
+            color: @hiclr;
+        }
+    }
+    .package-card:hover {
+        background-color: @lowignored;
+        color: @hiclr;
+    }
+    // --- CODE BLOCKS -------------------------------------------------
+    .section-container pre, .section-container code {
+        color: @clr;
+        background-color: @lowbg;
+    }
+    select.form-control {
+        .default-style;
+    }
+    .btn, .btn.btn-default {
+        background-image: linear-gradient(@lowbg, @lowbg);
+    }
+    // --- SETTINGS MENU -----------------------------------------------
+    li .icon {
+        color: @clr;
+    }
+    .nav > li > a:hover {
+        background-color: @lowignored;
+        color: @hiclr;
+    }
+}
 
 
 // === SYNTAX ==========================================================
 .syntax--punctuation.syntax--definition.syntax--comment {
-    color: #444;
+    color: @lowignored;
 }
 
 
@@ -298,13 +302,13 @@ atom-pane-container {
 
 // --- V SCROLLBAR -----------------------------------------------------
 .scrollbars-visible-always ::-webkit-scrollbar-thumb, .scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-thumb {
-    background: #555;
-    border: 3px solid #333;
+    background: @hiignored;
+    border: 3px solid @bg;
 }
 
 // --- V SCROLL GUTTER -------------------------------------------------
 .scrollbars-visible-always ::-webkit-scrollbar-track, .scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-track {
-    background: #333;
+    .default-style;
 }
 
 
@@ -312,5 +316,20 @@ atom-pane-container {
 
 // Markup Preview Styles
 .markdown-preview.markdown-preview {
-     background-color: #333;
+     .default-style;
+
+     code, pre {
+         color: @clr;
+         background-color: @lowbg;
+     }
+}
+
+.markdown-preview:not([data-use-github-style]) atom-text-editor {
+    background-color: @lowbg;
+}
+
+
+// === NYAN ============================================================
+div.inline-block.nyancat-scroll {
+    .default-style;
 }
