@@ -12,3 +12,4 @@ storage
 !/packages
 /packages/*
 !/packages/atom-plscript
+!/packages/multiple-keymaps

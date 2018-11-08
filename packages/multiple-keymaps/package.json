@@ -1,0 +1,46 @@
+{
+  "_from": "https://www.atom.io/api/packages/multiple-keymaps/versions/0.4.8/tarball",
+  "_id": "multiple-keymaps@0.4.8",
+  "_inBundle": false,
+  "_integrity": "sha512-Vgqa6ey4cLdylb5t+kB8MYS3uf4IVNeIocNaxnZYuZANYwfJSNOqgGzaQ35/uiSBc16VpZuxRBh0DTyPUUvsfg==",
+  "_location": "/multiple-keymaps",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/multiple-keymaps/versions/0.4.8/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/multiple-keymaps/versions/0.4.8/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/multiple-keymaps/versions/0.4.8/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/multiple-keymaps/versions/0.4.8/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/multiple-keymaps/versions/0.4.8/tarball",
+  "_shasum": "3719403ffe073d7e9fffd9a0ecd319b34f6ba877",
+  "_spec": "https://www.atom.io/api/packages/multiple-keymaps/versions/0.4.8/tarball",
+  "_where": "C:\\Users\\RYMAN~1.AMA\\AppData\\Local\\Temp\\apm-install-dir-118108-6756-j79ml7.t765c",
+  "activationCommands": {},
+  "bugs": {
+    "url": "https://github.com/callahanrts/multiple-keymaps/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "fs-extra": "0.8.1"
+  },
+  "deprecated": false,
+  "description": "A package that enables multiple keymaps by loading .cson files from ~/.atom/keymaps",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/callahanrts/multiple-keymaps#readme",
+  "keywords": [],
+  "license": "MIT",
+  "main": "./lib/multiple-keymaps",
+  "name": "multiple-keymaps",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/callahanrts/multiple-keymaps.git"
+  },
+  "version": "0.4.8"
+}
