@@ -1,20 +1,46 @@
-@hiclr: #e6e6e6;
-@clr: #ccc;
-@midclr: #aaa;
-@hiignored: #666;
-@lowignored: #404040;
-@bg: #333;
-@lowbg: #262626;
-@pitch: #1a1a1a;
-// --- BISEXUAL LIGHTING -----------------------------------------------
-@bipinklow: #f195ac;
-@bipinkhi: #e25a7c;
-@bibluelow: #83c1ea;
-@bibluehi: #42a4e5;
+// --- GENERAL COLORS --------------------------------------------------
+@mercury: #e6e6e6;
+@silver: #ccc;
+@silver-chalice: #aaa;
+@dove-gray: #666;
+@tundora: #404040;
+@mine-shaft: #333;
+@mine-shaft-dark: #262626;
+@cod-gray: #1a1a1a;
 
+// --- BISEXUAL LIGHTING -----------------------------------------------
+@mauvelous: #f195ac;
+@cranberry: #e25a7c;
+@seagull: #83c1ea;
+@picton-blue: #42a4e5;
+
+// --- MISC COLORS -----------------------------------------------------
+@dell: #337015;
+
+
+// --- MIXINS ----------------------------------------------------------
 .default-style {
-    background-color: @bg;
-    color: @clr;
+    background-color: @mine-shaft;
+    color: @silver;
+}
+
+.muted-style {
+    background-color: @mine-shaft;
+    color: @silver-chalice;
+}
+
+.code-block {
+    background-color: @mine-shaft-dark;
+    color: @silver;
+}
+
+.button-style {
+    background-image: linear-gradient(@mine-shaft-dark, @mine-shaft-dark);
+}
+
+.button-style--hover {
+    color: @cod-gray;
+    background-image: linear-gradient(@picton-blue, @cranberry);
 }
 
 
@@ -22,126 +48,33 @@
 
 // --- UI LOOK ---------------------------------------------------------
 atom-workspace {
-    background-color: @lowbg;
-    color: @clr;
+    .code-block;
     font-family: "DejaVu Mono";
 }
 
 background-tips ul.background-message {
-    color: @lowignored;
-}
-
-
-
-// === TREE VIEW =======================================================
-
-// --- TREE VIEW HEADER ------------------------------------------------
-atom-dock .tab-bar .tab.active,
-.tree-view .tree-view-root,
-.tool-panel.tree-view,
-ol.entries.list-tree,
-li.directory.entry.list-nested-item {
-    background-color: @lowbg;
-    color: @clr;
-}
-
-// --- TREE FOLDER HEADER ----------------------------------------------
-.tree-view .selected:before,
-.tree-view:focus .selected:before,
-.list-tree li.list-nested-item.selected > .list-item,
-li.file.entry.list-item.status-ignored.selected::before {
-    .default-style;
-}
-
-// --- DEFAULT TREE TEXT -----------------------------------------------
-.list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
-    color: @midclr;
-}
-
-.list-group li:not(.list-nested-item).selected, .list-tree li:not(.list-nested-item).selected, .list-group li.list-nested-item.selected > .list-item, .list-tree li.list-nested-item.selected > .list-item {
-    color: @clr;
-}
-
-// --- IGNORED TREE TEXT -----------------------------------------------
-.list-group li:not(.list-nested-item).status-ignored, .list-tree li:not(.list-nested-item).status-ignored, .list-group li.list-nested-item.status-ignored > .list-item, .list-tree li.list-nested-item.status-ignored > .list-item {
-    color: @hiignored;
-}
-
-// --- MODIFIED TREE TEXT ----------------------------------------------
-.list-group li:not(.list-nested-item).status-modified, .list-tree li:not(.list-nested-item).status-modified, .list-group li.list-nested-item.status-modified > .list-item, .list-tree li.list-nested-item.status-modified > .list-item {
-    color: @bipinklow;
-}
-
-// --- MODIFIED SELECTED TREE TEXT -------------------------------------
-.list-group li:not(.list-nested-item).selected.status-modified, .list-tree li:not(.list-nested-item).selected.status-modified, .list-group li.list-nested-item.selected.status-modified > .list-item, .list-tree li.list-nested-item.selected.status-modified > .list-item {
-    color: @bipinkhi;
-}
-
-// --- ADDED TREE TEXT -------------------------------------------------
-.list-group li:not(.list-nested-item).status-added, .list-tree li:not(.list-nested-item).status-added, .list-group li.list-nested-item.status-added > .list-item, .list-tree li.list-nested-item.status-added > .list-item {
-    color: @bibluelow;
-}
-
-// --- ADDED SELECTED TREE TEXT ----------------------------------------
-.list-group li:not(.list-nested-item).selected.status-added, .list-tree li:not(.list-nested-item).selected.status-added, .list-group li.list-nested-item.selected.status-added > .list-item, .list-tree li.list-nested-item.selected.status-added > .list-item {
-    color: @bibluehi;
-}
-
-
-// --- GUTTER, HIDDEN TOGGLE TAB -----------------------------------------------
-.atom-dock-toggle-button .atom-dock-toggle-button-inner,
-.tree-view,
-.editor .gutter {
-    background-color: @bg;
-    color: @midclr;
-}
-
-
-// === TEXT EDITOR TAB BAR =============================================
-
-// --- BACKGROUND BAR BEHIND TABS --------------------------------------
-.tab-bar {
-    background-color: @pitch;
-}
-
-// --- ACTIVE TABS -----------------------------------------------------
-.tab-bar .tab.active[data-type$="Editor"], .tab-bar .tab.active[data-type$="AboutView"], .tab-bar .tab.active[data-type$="TimecopView"], .tab-bar .tab.active[data-type$="StyleguideView"], .tab-bar .tab.active[data-type="MarkdownPreviewView"] {
-    background-color: @bg;
-    // box-shadow: inset 1px 0 #555, inset 0 -1px 0 #555;
-    // box-shadow: 1px 0 0 #777;
-    // box-shadow: inset 0 -1px 0 #777, 1px 0 0 #777;
-}
-
-// --- INACTIVE TABS ---------------------------------------------------
-.tab-bar .tab {
-    background-color: @lowbg;
-    box-shadow: inset 0 -1px 0 @lowbg;
-    // box-shadow: inset 1px 0 0 #555, inset 0 -1px 0 #555;
-}
-.tab-bar .tab:last-of-type {
-    box-shadow: inset 0 -1px 0 @lowbg;
-    // box-shadow: inset 1px 0 0 #555, inset 0 -1px 0 #555;
+    color: @tundora;
 }
 
 
 // === ATOM TEXT EDITOR ================================================
 
 atom-text-editor.editor {
-      background-color: @bg;
+      background-color: @mine-shaft;
       .cursor {
-            border-color: @hiclr;
+            border-color: @mercury;
       }
       .syntax--comment {
           // font-family: "Script12";
           font-family: "Lucida Sans Typewriter";
           font-style: italic;
-          color: @hiignored;
+          color: @dove-gray;
       }
       .wrap-guide {
-          background-color: @lowbg;
+          background-color: @tundora;
       }
       .selection .region {
-          background-color: @lowignored;
+          background-color: @cod-gray;
       }
 }
 
@@ -172,27 +105,129 @@ atom-text-editor.editor {
 //     }
 // }
 
+
+// === TREE VIEW =======================================================
+
+// --- TREE VIEW HEADER ------------------------------------------------
+atom-dock .tab-bar .tab.active,
+.tree-view .tree-view-root,
+.tool-panel.tree-view,
+ol.entries.list-tree,
+li.directory.entry.list-nested-item {
+    .code-block;
+}
+
+// --- TREE FOLDER HEADER ----------------------------------------------
+.tree-view .selected:before,
+.tree-view:focus .selected:before,
+.list-tree li.list-nested-item.selected > .list-item,
+li.file.entry.list-item.status-ignored.selected::before {
+    .default-style;
+}
+
+// --- DEFAULT TREE TEXT -----------------------------------------------
+.list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+    color: @silver-chalice;
+}
+
+.list-group li:not(.list-nested-item).selected, .list-tree li:not(.list-nested-item).selected, .list-group li.list-nested-item.selected > .list-item, .list-tree li.list-nested-item.selected > .list-item {
+    color: @silver;
+}
+
+// --- IGNORED TREE TEXT -----------------------------------------------
+.list-group li:not(.list-nested-item).status-ignored, .list-tree li:not(.list-nested-item).status-ignored, .list-group li.list-nested-item.status-ignored > .list-item, .list-tree li.list-nested-item.status-ignored > .list-item {
+    color: @dove-gray;
+}
+
+// --- MODIFIED TREE TEXT ----------------------------------------------
+.list-group li:not(.list-nested-item).status-modified, .list-tree li:not(.list-nested-item).status-modified, .list-group li.list-nested-item.status-modified > .list-item, .list-tree li.list-nested-item.status-modified > .list-item {
+    color: @mauvelous;
+}
+
+// --- MODIFIED SELECTED TREE TEXT -------------------------------------
+.list-group li:not(.list-nested-item).selected.status-modified, .list-tree li:not(.list-nested-item).selected.status-modified, .list-group li.list-nested-item.selected.status-modified > .list-item, .list-tree li.list-nested-item.selected.status-modified > .list-item {
+    color: @cranberry;
+}
+
+// --- ADDED TREE TEXT -------------------------------------------------
+.list-group li:not(.list-nested-item).status-added, .list-tree li:not(.list-nested-item).status-added, .list-group li.list-nested-item.status-added > .list-item, .list-tree li.list-nested-item.status-added > .list-item {
+    color: @seagull;
+}
+
+// --- ADDED SELECTED TREE TEXT ----------------------------------------
+.list-group li:not(.list-nested-item).selected.status-added, .list-tree li:not(.list-nested-item).selected.status-added, .list-group li.list-nested-item.selected.status-added > .list-item, .list-tree li.list-nested-item.selected.status-added > .list-item {
+    color: @picton-blue;
+}
+
+
+// --- GUTTER, HIDDEN TOGGLE TAB -----------------------------------------------
+.atom-dock-toggle-button .atom-dock-toggle-button-inner,
+.tree-view,
+.editor .gutter {
+    .muted-style;
+}
+
+
+// === TEXT EDITOR TAB BAR =============================================
+
+// --- BACKGROUND BAR BEHIND TABS --------------------------------------
+.tab-bar {
+    background-color: @cod-gray;
+}
+
+// --- ACTIVE TABS -----------------------------------------------------
+.tab-bar .tab.active[data-type$="Editor"], .tab-bar .tab.active[data-type$="AboutView"], .tab-bar .tab.active[data-type$="TimecopView"], .tab-bar .tab.active[data-type$="StyleguideView"], .tab-bar .tab.active[data-type="MarkdownPreviewView"] {
+    background-color: @mine-shaft;
+    // box-shadow: inset 1px 0 #555, inset 0 -1px 0 #555;
+    // box-shadow: 1px 0 0 #777;
+    // box-shadow: inset 0 -1px 0 #777, 1px 0 0 #777;
+}
+
+// --- INACTIVE TABS ---------------------------------------------------
+.tab-bar .tab {
+    background-color: @mine-shaft-dark;
+    box-shadow: inset 0 -1px 0 @mine-shaft-dark;
+    // box-shadow: inset 1px 0 0 #555, inset 0 -1px 0 #555;
+}
+.tab-bar .tab:last-of-type {
+    box-shadow: inset 0 -1px 0 @mine-shaft-dark;
+    // box-shadow: inset 1px 0 0 #555, inset 0 -1px 0 #555;
+}
+
+
 // --- GUTTER ----------------------------------------------------------
 atom-text-editor .gutter {
     .line-number.cursor-line, .line-number.bracket-matcher {
-        background-color: @lowignored;
-        color: @clr;
+        background-color: @tundora;
+        color: @silver;
     }
 }
 
 atom-text-editor .gutter[gutter-name="com.alexcorre.git-blame"] {
     .blame-line.darker {
-        background-color: @lowbg;
+        background-color: @mine-shaft-dark;
         a, .text-highlight {
-            color: @bipinklow;
+            color: @mauvelous;
         }
     }
     .blame-line.lighter {
-        background-color: #444;
+        background-color: @tundora;
         a, .text-highlight {
-            color: @bibluelow;
+            color: @seagull;
         }
     }
+}
+
+
+// === BUTTONS =========================================================
+.btn,
+.btn.btn-default {
+    .button-style;
+}
+
+.btn:hover,
+.btn.btn-default:hover {
+    .button-style--hover;
 }
 
 
@@ -200,16 +235,14 @@ atom-text-editor .gutter[gutter-name="com.alexcorre.git-blame"] {
 .horizontal-scrollbar,
 .tool-panel,
 .status-bar,
-.btn,
 .editor.mini {
     .default-style;
 }
 
-
 // === STATUS BAR ======================================================
 
 status-bar .inline-block, status-bar-file.file-info.inline-block a, status-bar-cursor.cursor-position.inline-block a {
-    color: @midclr;
+    .muted-style;
 }
 
 status-bar-file.file-info.inline-block:hover,
@@ -224,8 +257,8 @@ grammar-selector-status.grammar-status.inline-block a:hover,
 .github-branch.inline-block:hover, .github-PushPull.inline-block:hover,
 a.github-ChangedFilesCount.inline-block:hover,
 .package-updates-status-view.inline-block.text.text-info:hover {
-    background-color: @lowbg;
-    color: @hiignored;
+    background-color: @mine-shaft-dark;
+    color: @dove-gray;
 }
 
 
@@ -236,7 +269,7 @@ a.github-ChangedFilesCount.inline-block:hover,
 }
 
 .stdout {
-    color: #337015;
+    color: @dell;
     font-family: "Courier Prime Code";
     font-weight: 800;
 }
@@ -244,8 +277,8 @@ a.github-ChangedFilesCount.inline-block:hover,
 
 // --- GIT -------------------------------------------------------------
 atom-pane-container {
-    background-color: @bg;
-    color: @hiignored;
+    background-color: @mine-shaft;
+    color: @dove-gray;
 }
 
 .github-CommitView-editor {
@@ -257,57 +290,52 @@ atom-pane-container {
 .settings-view .panels .panels-item,
 .settings-view .package-card,
 .settings-view .config-menu {
-    background-color: @bg;
-    color: @hiignored;
+    background-color: @mine-shaft;
+    color: @dove-gray;
 
-    button {
-        .default-style;
-        :hover {
-            color: @hiclr;
-        }
-    }
     .package-card:hover {
-        background-color: @lowignored;
-        color: @hiclr;
-    }
-    // --- CODE BLOCKS -------------------------------------------------
-    .section-container pre, .section-container code {
-        color: @clr;
-        background-color: @lowbg;
+        background-color: @tundora;
+        color: @mercury;
     }
     select.form-control {
         .default-style;
     }
-    .btn, .btn.btn-default {
-        background-image: linear-gradient(@lowbg, @lowbg);
-    }
+
     // --- SETTINGS MENU -----------------------------------------------
     li .icon {
-        color: @clr;
+        color: @silver;
     }
     .nav > li > a:hover {
-        background-color: @lowignored;
-        color: @hiclr;
+        background-color: @tundora;
+        color: @mercury;
     }
 }
 
 
 // === SYNTAX ==========================================================
 .syntax--punctuation.syntax--definition.syntax--comment {
-    color: @lowignored;
+    color: @tundora;
+}
+
+
+// === CODE BLOCKS =====================================================
+pre, code {
+    .code-block;
 }
 
 
 // === SCROLLBARS ======================================================
 
 // --- V SCROLLBAR -----------------------------------------------------
-.scrollbars-visible-always ::-webkit-scrollbar-thumb, .scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-thumb {
-    background: @hiignored;
-    border: 3px solid @bg;
+.scrollbars-visible-always ::-webkit-scrollbar-thumb,
+.scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-thumb {
+    background: @dove-gray;
+    border: 3px solid @mine-shaft;
 }
 
 // --- V SCROLL GUTTER -------------------------------------------------
-.scrollbars-visible-always ::-webkit-scrollbar-track, .scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-track {
+.scrollbars-visible-always ::-webkit-scrollbar-track,
+.scrollbars-visible-always atom-text-editor ::-webkit-scrollbar-track {
     .default-style;
 }
 
@@ -317,15 +345,13 @@ atom-pane-container {
 // Markup Preview Styles
 .markdown-preview.markdown-preview {
      .default-style;
-
      code, pre {
-         color: @clr;
-         background-color: @lowbg;
+         .code-block;
      }
 }
 
 .markdown-preview:not([data-use-github-style]) atom-text-editor {
-    background-color: @lowbg;
+    .code-block;
 }
 
 
