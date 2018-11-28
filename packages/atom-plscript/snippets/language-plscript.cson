@@ -88,7 +88,7 @@
 
   'Alert Mgr':
     'prefix': 'alert_mgr'
-    'body': 'Alert_mgr::${1:set_message(${2:});}'
+    'body': 'Alert_mgr::${1:add_message(${2:});}'
 
   'Object Mgr':
     'prefix': 'obj_mgr'
