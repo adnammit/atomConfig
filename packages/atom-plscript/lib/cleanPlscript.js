@@ -1,11 +1,7 @@
 'use babel';
 
-// so this is ok....
-// it might be preferable to use textBuffer's built-in find-replace method, or go line-by-line for
-//   more complex manipulation
-
 export default function (contents) {
-    let warning;
+    let warnings = [];
     const map = [
         {regex: /\t/gi, val: '        '},
         {regex: /\r/gi, val: ''},
@@ -41,6 +37,8 @@ export default function (contents) {
 
         {regex: /\bcopier *= *make\("Copier"\);\s+/g, val: ''},
         {regex: /\b(copier|make\("Copier"\))\./g, val: 'Copier::'},
+
+        {regex: /\bmake\("Script_func"\)\.load\(/g, val: 'make\("Script_func",'},
     ];
 
     map.forEach(item => (contents = contents.replace(item.regex, item.val)));
@@ -49,8 +47,12 @@ export default function (contents) {
         contents = contents.replace(/\b(loader|m_loader) *= *make\("M_loader"\);\s+/g, '');
         contents = contents.replace(/\b(loader|m_loader|make\("M_loader"\))\./g, 'M_loader::');
     } else {
-        warning = `YO! This file contains instances of 'Loader'. Manual replacements with 'M_loader' are required.`;
+        warnings.push(`This file contains instances of 'Loader'. Manual replacements with 'M_loader' are required.`);
     }
 
-    return { warning, text: contents };
+    if(/\bset_message/g.test(contents)) {
+         warnings.push(`This file contains outdated calls to 'set_message'. Consider replacing them with 'add_message'.`);
+    }
+
+    return { warnings, text: contents };
 }

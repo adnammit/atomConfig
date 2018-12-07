@@ -139,12 +139,15 @@ export default {
     },
 
     cleanFile() {
-      const textBuffer = atom.workspace.getActiveTextEditor().getBuffer();
-      let buffText = textBuffer.getText();
-      const cleanText = cleanPlscript(buffText);
-      textBuffer.setText(cleanText.text);
-      if(cleanText.warning)
-          this.holler(cleanText.warning);
+        const textBuffer = atom.workspace.getActiveTextEditor().getBuffer();
+        let buffText = textBuffer.getText();
+        const cleanText = cleanPlscript(buffText);
+        textBuffer.setText(cleanText.text);
+        if(cleanText.warnings) {
+            for (var i = 0; i < cleanText.warnings.length; i++) {
+                this.holler(cleanText.warnings[i]);
+            }
+        }
     },
 
     convertWindowsPathToLinux(filepath) {
