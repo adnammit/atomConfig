@@ -4,6 +4,14 @@
   'Code Tag':
     'prefix': 'code'
     'body': '<code>${1:text}</code>'
+  'nowiki':
+    'prefix': 'nowiki'
+    'body': '<nowiki>$0'
   'idk':
     'prefix': 'shrug'
     'body': '\`\\_(ツ)_/`'
+
+'.source.xml, .source.gfm, .text.plain, .text.xml, source.js':
+  'console.log':
+    'prefix': 'clog'
+    'body': 'console.log($1);$0'

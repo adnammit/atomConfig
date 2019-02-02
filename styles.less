@@ -49,7 +49,7 @@
 // --- UI LOOK ---------------------------------------------------------
 atom-workspace {
     .code-block;
-    font-family: "DejaVu Mono";
+    // font-family: "DejaVu Mono, Arial";
 }
 
 background-tips ul.background-message {
@@ -65,9 +65,11 @@ atom-text-editor.editor {
             border-color: @mercury;
       }
       .syntax--comment {
-          // font-family: "Script12";
-          font-family: "Lucida Sans Typewriter";
-          font-style: italic;
+          // this seems poorly advised, but Fira iScript kinda sucks...
+          font-size: 1.4rem;
+          line-height: 1rem;
+          // font-family: "Script12 BT Roman", "Bitstream Vera Sans Mono";
+          // font-style: italic;
           color: @dove-gray;
       }
       .wrap-guide {
