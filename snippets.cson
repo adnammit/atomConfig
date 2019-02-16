@@ -10,6 +10,15 @@
   'idk':
     'prefix': 'shrug'
     'body': '\`\\_(ツ)_/`'
+  'preformatted-sql':
+    'prefix': 'prsql'
+    'body': '```sql\n\t$1\n```$0'
+  'preformatted-csharp':
+    'prefix': 'prcsharp'
+    'body': '```csharp\n\t$1\n```$0'
+  'preformatted-js':
+    'prefix': 'prjs'
+    'body': '```javascript\n\t$1\n```$0'
 
 '.source.xml, .source.gfm, .text.plain, .text.xml, source.js':
   'console.log':
