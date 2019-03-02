@@ -19,6 +19,12 @@
   'preformatted-js':
     'prefix': 'prjs'
     'body': '```javascript\n\t$1\n```$0'
+  'preformatted-ts':
+    'prefix': 'prts'
+    'body': '```typescript\n\t$1\n```$0'
+  'preformatted-bash':
+    'prefix': 'prba'
+    'body': '```bash\n\t$1\n```$0'
 
 '.source.xml, .source.gfm, .text.plain, .text.xml, source.js':
   'console.log':

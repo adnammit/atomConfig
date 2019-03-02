@@ -43,6 +43,12 @@
     background-image: linear-gradient(@picton-blue, @cranberry);
 }
 
+.fira-comments {
+    // this seems poorly advised, but Fira iScript kinda sucks...
+    font-size: 1.4rem;
+    line-height: 1rem;
+}
+
 
 // === WELCOME TO A NEW WINDOW =========================================
 
@@ -64,12 +70,10 @@ atom-text-editor.editor {
       .cursor {
             border-color: @mercury;
       }
+      .syntax--comment, .syntax--markup.syntax--italic {
+          .fira-comments;
+      }
       .syntax--comment {
-          // this seems poorly advised, but Fira iScript kinda sucks...
-          font-size: 1.4rem;
-          line-height: 1rem;
-          // font-family: "Script12 BT Roman", "Bitstream Vera Sans Mono";
-          // font-style: italic;
           color: @dove-gray;
       }
       .wrap-guide {
