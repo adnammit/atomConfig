@@ -1,15 +1,15 @@
-# # universal
-# 'atom-text-editor:not([mini])':
-#     'alt-b': 'git-blame:toggle'
+###############################################################################
 
 '.platform-darwin':
   'cmd-k cmd-b': 'unset!'
   'cmd-t':'tree-view:toggle'
   'ctrl-shift-t':'tree-view:reveal-active-file'
   'ctrl-t': 'fuzzy-finder:toggle-file-finder'
+  'alt-shift-t':'platformio-ide-terminal:toggle'
+  'alt-shift-x':'platformio-ide-terminal:close'
 
+# ===== TREE-VIEW ==================================================================
 '.platform-darwin .tree-view':
-# ====== UNDO ALL THE cmd-K STUFF ======
   'cmd-k up': 'unset!'
   'cmd-k right': 'unset!'
   'cmd-k left': 'unset!'
@@ -19,11 +19,7 @@
   'cmd-k j': 'unset!'
   'cmd-k h': 'unset!'
 
-'.platform-darwin .editor:not([mini])':
-    'cmd-g':'go-to-line:toggle'
-    'cmd-a': 'editor:move-to-first-character-of-line'
-    'cmd-e': 'editor:move-to-end-of-line'
-
+# ===== EDITOR =====================================================================
 '.platform-darwin .editor':
     'cmd-k': 'custom:kill-line'
 
@@ -35,8 +31,22 @@
     'cmd-shift-right': 'editor:select-to-next-subword-boundary'
     'cmd-shift-left': 'editor:select-to-previous-subword-boundary'
 
+# ===== MAIN EDITOR ================================================================
+'.platform-darwin .editor:not([mini])':
+    'cmd-g':'go-to-line:toggle'
+    'cmd-a': 'editor:move-to-first-character-of-line'
+    'cmd-e': 'editor:move-to-end-of-line'
+
+# ===== BODY =======================================================================
 'body.platform-darwin':
-# ====== UNDO ALL THE cmd-* STUFF ======
+    'cmd-up':'unset!'
+    'cmd-down':'unset!'
+    'cmd-k cmd-u': 'unset!'
+    'cmd-shift-T': 'unset!' #'pane:reopen-closed-item'
+    # 'cmd-`': 'core:close' --NECESSARY??
+
+
+    # darwin - necessary?
     # 'alt-1': 'unset!' # pane:show-item-1'
     # 'alt-2': 'unset!' # pane:show-item-1'
     # 'alt-3': 'unset!' # pane:show-item-1'
@@ -46,19 +56,22 @@
     # 'alt-7': 'unset!' # pane:show-item-1'
     # 'alt-8': 'unset!' # pane:show-item-1'
     # 'alt-9': 'unset!' # pane:show-item-1'
-    'cmd-k cmd-u': 'unset!'
+
+    'cmd-k up': 'unset!'
     'cmd-k down': 'unset!'
     'cmd-k left': 'unset!'
     'cmd-k right': 'unset!'
-    'cmd-k up': 'unset!'
+    'cmd-k cmd-up': 'unset!'
+    'cmd-k cmd-down': 'unset!'
+    'cmd-k cmd-left': 'unset!'
+    'cmd-k cmd-right': 'unset!'
+
     'cmd-k cmd-w': 'unset!'#'pane:close'
     'cmd-k cmd-alt-w': 'unset!'
-    'cmd-k cmd-up': 'unset!'
-    'cmd-k cmd-right': 'unset!'
-    'cmd-k cmd-left': 'unset!'
-    'cmd-k cmd-down': 'unset!'
+    'cmd-k cmd-p': 'unset!' #'window:focus-previous-pane'
+    'cmd-k cmd-n': 'unset!' #'window:focus-next-pane'
 
-    ##### CHANGE THESE FOR DARWIN
+    ##### CHANGE THESE FOR DARWIN?
     # 'ctrl-1': 'pane:show-item-1'
     # 'ctrl-2': 'pane:show-item-2'
     # 'ctrl-3': 'pane:show-item-3'
@@ -69,20 +82,22 @@
     # 'ctrl-8': 'pane:show-item-8'
     # 'ctrl-9': 'pane:show-item-9'
 
-    'cmd-k cmd-w': 'unset!'#'pane:close'
-    'cmd-k cmd-alt-w': 'unset!'
-    'cmd-k cmd-p': 'unset!' #'window:focus-previous-pane'
-    'cmd-k cmd-n': 'unset!' #'window:focus-next-pane'
-    'cmd-shift-T': 'unset!' #'pane:reopen-closed-item'
-    'cmd-up':'unset!'
-    'cmd-down':'unset!'
-    'cmd-`': 'core:close'
-    'ctrl-shift-a':'application:add-project-folder'
-    'cmd-u cmd-up': 'pane:split-up-and-copy-active-item'
+    'cmd-u up': 'pane:split-up-and-copy-active-item'
     'cmd-u right': 'pane:split-right-and-copy-active-item'
     'cmd-u left': 'pane:split-left-and-copy-active-item'
     'cmd-u down': 'pane:split-down-and-copy-active-item'
 
+    ##### CHANGE THESE FOR DARWIN?
+    # 'ctrl-u ctrl-up': 'window:focus-pane-above'
+    # 'ctrl-u ctrl-right': 'window:focus-pane-on-right'
+    # 'ctrl-u ctrl-left': 'window:focus-pane-on-left'
+    # 'ctrl-u ctrl-down': 'window:focus-pane-below'
+
+    # 'alt-o': 'window:focus-next-pane' -- update for darwin?
+    'ctrl-shift-a':'application:add-project-folder'
+
+##### START HERE FOR SYNCING WITH WINLNX FILE
+# ===== WORKSPACE ==================================================================
 '.platform-darwin .workspace':
     'ctrl-8': 'unset!' #github:toggle-github-tab-focus'
     'ctrl-9': 'unset!' #github:toggle-git-tab-focus'

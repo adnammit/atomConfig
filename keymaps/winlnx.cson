@@ -1,21 +1,14 @@
-# # universal
-# 'atom-text-editor:not([mini])':
-#     'alt-b': 'git-blame:toggle'
-
 ###############################################################################
-# ====== TO DO ======
-# 'atom-workspace':
-#   'alt-cmd-.': 'tag:close-tag'
-# 'atom-text-editor[data-grammar~="html"]':
-#   '>': 'autoclose-html:close-and-complete'
 
 '.platform-win32, .platform-linux':
   'ctrl-k ctrl-b': 'unset!'
   'alt-t':'tree-view:toggle'
   'ctrl-shift-t':'tree-view:reveal-active-file'
+  'alt-shift-t':'platformio-ide-terminal:toggle'
+  'alt-shift-x':'platformio-ide-terminal:close'
 
+## ===== TREE-VIEW =================================================================
 '.platform-win32 .tree-view, .platform-linux .tree-view':
-# ====== UNDO ALL THE CTRL-K STUFF ======
   'ctrl-k up': 'unset!'
   'ctrl-k right': 'unset!'
   'ctrl-k left': 'unset!'
@@ -25,11 +18,7 @@
   'ctrl-k j': 'unset!'
   'ctrl-k h': 'unset!'
 
-'.platform-win32 .editor:not([mini]), .platform-linux .editor:not([mini])':
-    'alt-g': 'go-to-line:toggle'
-    'ctrl-a': 'editor:move-to-first-character-of-line'
-    'ctrl-e': 'editor:move-to-end-of-line'
-
+# ===== EDITOR =====================================================================
 '.platform-win32 .editor, .platform-linux .editor':
     'ctrl-k': 'custom:kill-line'
 
@@ -41,10 +30,14 @@
     'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
     'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
 
-'body.platform-win32, body.platform-linux':
-    # ====== UNDO ALL THE CTRL-* STUFF ======
-    # 'ctrl-k ctrl-u': 'unset!'
+# ===== MAIN EDITOR ================================================================
+'.platform-win32 .editor:not([mini]), .platform-linux .editor:not([mini])':
+    'alt-g': 'go-to-line:toggle'
+    'ctrl-a': 'editor:move-to-first-character-of-line'
+    'ctrl-e': 'editor:move-to-end-of-line'
 
+# ===== BODY =======================================================================
+'body.platform-win32, body.platform-linux':
     'alt-1': 'unset!' # pane:show-item-1'
     'alt-2': 'unset!' # pane:show-item-1'
     'alt-3': 'unset!' # pane:show-item-1'
@@ -55,15 +48,14 @@
     'alt-8': 'unset!' # pane:show-item-1'
     'alt-9': 'unset!' # pane:show-item-1'
 
+    'ctrl-k up': 'unset!'
     'ctrl-k down': 'unset!'
     'ctrl-k left': 'unset!'
     'ctrl-k right': 'unset!'
-    'ctrl-k up': 'unset!'
-
     'ctrl-k ctrl-up': 'unset!'
-    'ctrl-k ctrl-right': 'unset!'
-    'ctrl-k ctrl-left': 'unset!'
     'ctrl-k ctrl-down': 'unset!'
+    'ctrl-k ctrl-left': 'unset!'
+    'ctrl-k ctrl-right': 'unset!'
 
     'ctrl-k ctrl-w': 'unset!'#'pane:close'
     'ctrl-k ctrl-alt-w': 'unset!'
@@ -93,6 +85,8 @@
     'alt-o': 'window:focus-next-pane'
     'alt-shift-a':'application:add-project-folder'
 
+##### START HERE FOR SYNCING WITH DARWIN FILE
+# ===== WORKSPACE ==================================================================
 '.platform-win32 .workspace, .platform-linux .workspace':
   'ctrl-8': 'unset!' #github:toggle-github-tab-focus'
   'ctrl-9': 'unset!' #github:toggle-git-tab-focus'

@@ -6,6 +6,7 @@ The keybindings are a weird conflation of native system and emacs -- you probabl
 ## PACKAGES
 Since it's kind of icky to version control packages, here are some nice packages that I like:
 * git-blame
+* platformio-ide-terminal
 * atom-beautify
 * highlight-selected
 * multi-cursor
